@@ -23,7 +23,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
         'USER': 'postgres',
         'PASSWORD': os.environ['POSTGRES_PASSWORD'],
         'HOST': '*',
-        'PORT': '*',
+        'PORT': '',
     }
 }
 
