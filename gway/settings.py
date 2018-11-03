@@ -22,7 +22,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
         'NAME': 'gway',
         'USER': 'postgres',
         'PASSWORD': os.environ['POSTGRES_PASSWORD'],
-        'HOST': '104.248.188.50',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
