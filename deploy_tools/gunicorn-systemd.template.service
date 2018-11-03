@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn server for DOMAIN
+
+[Service]
+Restart=on-failure
+User=chaz
+WorkingDirectory=/home/chaz/sites/DOMAIN
+EnvironmentFile=/home/chaz/sites/DOMAIN/.env
+
+ExecStart=/home/chaz/sites/DOMAIN/virtualenv/bin/gunicorn \
+	--bind unix:/tmp/DOMAIN.socket \
+	gway.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
