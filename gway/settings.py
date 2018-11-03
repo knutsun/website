@@ -21,7 +21,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gway',
         'USER': 'postgres',
-        'PASSWORD': 'os.environ['POSTGRES_PASSWORD']',
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
         'HOST': '*',
         'PORT': '*',
     }
