@@ -12,6 +12,37 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+if 'DJANGO_DEBUG_FALSE' in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gway',
+        'USER': 'postgres',
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+else:
+    DEBUG = True
+    SECRET_KEY = 'z+tg8ylr*tmcb9^7m+df_8^)stt^k6ahlh29d(rwlny*f$c_)7'
+    ALLOWED_HOSTS = ['*']
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gway',
+        'USER': 'postgres',
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,12 +51,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z+tg8ylr*tmcb9^7m+df_8^)stt^k6ahlh29d(rwlny*f$c_)7'
+# SECRET_KEY = 'z+tg8ylr*tmcb9^7m+df_8^)stt^k6ahlh29d(rwlny*f$c_)7'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -73,16 +104,16 @@ WSGI_APPLICATION = 'gway.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gway',
-        'USER': 'postgres',
-        'PASSWORD': '123god1;',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'gway',
+#         'USER': 'postgres',
+#         'PASSWORD': '123god1;',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
