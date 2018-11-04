@@ -1,3 +1,0 @@
-config = {
-	'API_KEY':'AIzaSyAR9ExVyqXywPKHJqYtgFVEVJA7uQHSKY8'
-}
