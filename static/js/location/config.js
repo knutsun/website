@@ -1,3 +1,3 @@
 config = {
-	'API_KEY':'AIzaSyAR9ExVyqXywPKHJqYtgFVEVJA7uQHSKY8'
+	'API_KEY':'AIzaSyDhp8VHg4CGePcPRQm7tfOqbAofBhoG3ME'
 }
