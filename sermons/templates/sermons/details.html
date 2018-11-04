@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'sermons/css/style-details.css' %}">
+  <script src="{% static 'sermons/js/script.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="header">{{ sermon.title }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3 class="subheader">Delivered on {{ sermon.date }}</h3>
+    </div>
+  </div>
+  <div class="row audio-player">
+  	<div class="col">
+  		<audio controls id="track" preload="metadata">
+  			<source src="{{ sermon.file.url }}" type="audio/mpeg">
+  		</audio>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="col">
+      <p>{{ sermon.file.size|filesizeformat }}</p>
+  		<p id="description">{{ sermon.description }}</p>
+  	</div>
+  </div>
+</div>
+
+{% load static %}
+  <script src="{% static 'sermons/js/script.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sermons/css/style-local.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'sermons/css/animate.css' %}">
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="{% static 'sermons/js/script.js' %}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div class="container">
+		<h2 class="header">Sermon Archive</h2>
+
+			<form>
+			  <div class="input-group search-bar">
+			    <input type="search" class="form-control" name="search" id="myInput" placeholder="Search">
+			    <div class="input-group-btn">
+			      <button class="btn btn-primary" type="submit">
+			        <i class="fas fa-search"></i>
+			      </button>
+			    </div>
+			  </div>
+			</form>
+
+			{% if messages %}
+				<ul class="messages">
+					{% for message in messages %}
+						<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				{% if 'search' in request.GET %}
+					<p>Your search for "<em>{{ search_term }}</em>" yielded {{ search_result_count }}</p>
+				{% endif %}
+			{% endif %}
+
+
+			<table id="sermons" class="">
+				<tr>
+					<th onclick="sortTable(0)">Title</th>
+					<th onclick="sortTable(0)">Date</th>
+					<th>File</th>
+				</tr>
+				<tbody id="myTable">
+					{% for sermon in all_sermons %}
+					<tr class="tr">
+						<td>
+							<a id="title_link" href="{% url 'sermons:detail' sermon.id %}">{{ sermon.title }}</a>
+						</td>
+						<td>{{ sermon.date }}</a></td>
+						<td><a class="file" href="{{ sermon.file.url }}" download><img id="download-icon" src="{% static 'sermons/img/download.png' %}"></a></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+	</div>
+</div>	
+{% endblock %}

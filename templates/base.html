@@ -10,9 +10,13 @@
       <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-global.css' %}">
 
     <title>Gateway Baptist Church</title>
-    {% block head %}
+    {% block header %}
     {% endblock %}
     <!-- Custom styles for this template -->
   </head>
@@ -23,7 +27,7 @@
     </header>
 
     <main role="main">
-      {% block main %}
+      {% block body %}
       {% endblock %}
 
     </main>
