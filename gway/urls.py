@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('sermons/', include('sermons.urls')),
+    path('location/', TemplateView.as_view(template_name='location/index.html'), name='index'),
+
 ]
 
 

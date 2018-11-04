@@ -1,0 +1,42 @@
+/*Set display for mobile*/
+@media only screen and (max-width: 600px) {
+	#map {
+		height: 60%;
+		width: 80%;
+		margin: 5% 10% 5% 10%;
+	}
+	.header {
+        color:black;
+        text-align: center;
+        font-family: 'PT Sans Caption', sans-serif;
+        margin: 22% 5% 5% 5%;
+    }
+}
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 768px) {
+	#map {
+		height: 50%;
+		width: 70%;
+		margin: 0% 15% 2% 15%;
+	}
+	.header {
+        color:black;
+        text-align: center;
+        font-family: 'PT Sans Caption', sans-serif;
+        margin: 10% 15% 2% 15%;
+    }
+}
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 1000px) {
+	#map {
+		height: 50%;
+		width: 70%;
+		margin: 0% 15% 2% 15%;
+	}
+	.header {
+        color:black;
+        text-align: center;
+        font-family: 'PT Sans Caption', sans-serif;
+        margin: 5% 15% 2% 15%;
+    }
+}
