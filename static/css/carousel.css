@@ -52,6 +52,11 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.second-hero {
+  background-image: url('../img/balcony-view.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 /* MARKETING CONTENT
 -------------------------------------------------- */
 

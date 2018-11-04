@@ -48,3 +48,30 @@ class SermonDetailView(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(SermonDetailView, self).get_context_data(**kwargs)
 		return context
+
+
+class AddSermonView(LoginRequiredMixin, PermissionRequiredMixin, FormView):
+	template_name = 'sermons/add.html'
+	form_class = SermonForm
+	success_url = 'sermons/add.html'
+	permission_required = 'sermons.can_submit'
+
+	#display blank form
+	def get(self, request):
+		form = self.form_class(None) #context is None; blank form data
+		return render(request, self.template_name, {'form': form})
+
+	#process form data
+	def post(self, request):
+		form = self.form_class(request.POST, request.FILES) #context is POST
+
+		if form.is_valid():
+			form.save()
+			messages.success(request, "Sermon successfully uploaded", extra_tags="message_success")
+			return render(request, self.success_url)
+		else:
+			return render(request, self.template_name, {'form': form})
+
+	@method_decorator(login_required)
+	def dispatch(self, request, *args, **kwargs):
+		return super(AddSermonView, self).dispatch(request, *args, **kwargs)

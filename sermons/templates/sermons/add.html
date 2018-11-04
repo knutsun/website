@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sermons/css/style-add.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style-global.css' %}">
+	
+{% endblock %}
+
+{% block body %}
+
+	<h2 class="header">Add Sermon</h2>
+
+	<p class="subheader">Submit a new sermon below.</p>
+
+	{% if messages %}
+		<ul>
+			{% for message in messages %}
+				<div class="alert alert-primary" role="alert">
+				  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				</div>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+<div class="container form-wrapper">
+	<form class="" action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="form-group form-horizontal">
+		    <label for="title" class="col-form-label">Title</label>
+		    <div class="col col-sm-1 col-md-8 col-lg-6">
+		    	<input type="text" class="form-control form" name="title" id="title" value="{{ title }}" placeholder="Title" required>
+		    </div>
+		</div>
+
+		<div class="form-group form-horizontal">
+		  <label for="date" class="col-form-label">Date</label>
+		  <div class="col col-sm-1 col-md-8 col-lg-6">
+		    <input class="form-control" type="date" placeholder="Date" name="date" value="{{ date }}" id="date" required>
+		  </div>
+		</div>
+
+		<div class="form-group form-horizontal">
+		    <label for="description" class="col-form-label">Description</label>
+		    <div class="col col-sm-1 col-md-8 col-lg-6">
+		    	<textarea class="form-control" name="description" value="{{ description }}" placeholder="Enter a description" rows="8" required></textarea>
+			</div>
+		</div>
+
+		
+		<div class="form-group form-horizontal">
+		    <label for="exampleInputFile" class="col-form-label">File</label>
+		    <div class="col col-sm-1 col-md-8 col-lg-6">
+		    	<input type="file" class="form-control-file form" name="file" value="{{ file }}" id="file" aria-describedby="fileHelp" required>
+		    	<small id="fileHelp" class="form-text text-muted">Select an audio file in mp3 format.</small>
+		    </div>
+		</div>
+
+
+		<button class="btn btn-primary" type="submit">Upload sermon</button>
+
+  	</form>
+</div>
+	
+{% endblock %}

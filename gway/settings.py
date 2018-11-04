@@ -16,6 +16,8 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     ALLOWED_HOSTS = [os.environ['SITENAME']]
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -25,12 +27,16 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
-}
+    }
 
 else:
     DEBUG = True
     SECRET_KEY = 'z+tg8ylr*tmcb9^7m+df_8^)stt^k6ahlh29d(rwlny*f$c_)7'
     ALLOWED_HOSTS = ['*']
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    STATICFILES_DIRS = (
+      os.path.join(BASE_DIR, 'static/'),
+    )
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -40,7 +46,7 @@ else:
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
-}
+    }
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -157,7 +163,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = (
 #   os.path.join(BASE_DIR, 'static/'),
 # )
