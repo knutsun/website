@@ -1,3 +1,4 @@
 .env
 setup_server.txt
 media/
+location/config.js
