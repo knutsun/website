@@ -16,9 +16,9 @@ def index(request):
 	all_sermons = Sermons.objects.all()
 	sermon_count = Sermons.objects.all().count()
 
-	paginator = Paginator(all_sermons, 10)
-	page = request.GET.get('page')
-	all_sermons = paginator.get_page(page)
+	# paginator = Paginator(all_sermons, 10)
+	# page = request.GET.get('page')
+	# all_sermons = paginator.get_page(page)
 
 	search_term = ""
 	search_result_count = ""

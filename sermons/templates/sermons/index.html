@@ -4,8 +4,7 @@
 
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'sermons/css/style-local.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'sermons/css/animate.css' %}">
-	
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<script src="{% static 'sermons/js/script.js' %}"></script>
 
@@ -13,21 +12,27 @@
 
 {% block body %}
 
-<div class="container">
-	<div class="container">
-		<h2 class="header">Sermon Archive</h2>
+<div class="wrapper">
+		<div class="wrapper-header">
+			<h2 class="header">Sermon Archive</h2>
+		</div>
 
-			<form>
-			  <div class="input-group search-bar col col-sm-1 col-md-7 col-lg-5">
-				    <input type="search" class="form-control" name="search" id="myInput" placeholder="Search">
-				    <div class="input-group-btn">
-				    	<button class="btn btn-primary" type="submit">
-				        	<i class="fas fa-search"></i>
-				      	</button>
-			    	</div>
-			  </div>
-			</form>
+		<div class="wrapper-search">
+			<div id="search-bar">
+				<form>
+				  <div class="input-group search-bar col col-sm-1 col-md-7 col-lg-5">
+					    <input type="search" class="form-control" name="search" id="myInput" placeholder="Search">
+					    <div class="input-group-btn">
+					    	<button class="btn btn-primary" type="submit">
+					        	<i class="fas fa-search"></i>
+					      	</button>
+				    	</div>
+				  </div>
+				</form>
+			</div>
+		</div>
 
+		<div class="wrapper-messages">
 			{% if messages %}
 				<ul class="messages">
 					{% for message in messages %}
@@ -39,8 +44,9 @@
 					<p>Your search for "<em>{{ search_term }}</em>" yielded {{ search_result_count }}</p>
 				{% endif %}
 			{% endif %}
+		 </div>
 
-
+		<div class="wrapper-table">
 			<table id="sermons" class="">
 				<tr>
 					<th onclick="sortTable(0)">Title</th>
@@ -59,35 +65,42 @@
 					{% endfor %}
 				</tbody>
 			</table>
+		</div>
 
-			<div class="pagination container">
-				{% if all_sermons.paginator.num_pages > 1 %}
-					{% if all_sermons.has_previous %}
-						<a class="pagination-action" href="?page=1">
-							<i class="fas fa-angle-double-left"></i>
-						</a>
-						<a class="pagination-action" href="?page={{ all_sermons.previous_page_number }}">
-							<i class="fas fa-angle-left"></i>
-						</a>
+		<!-- <div class="pagination container">
+			{% if all_sermons.paginator.num_pages > 1 %}
+				{% if all_sermons.has_previous %}
+					<a class="pagination-action" href="?page=1">
+						<i class="fas fa-angle-double-left"></i>
+					</a>
+					<a class="pagination-action" href="?page={{ all_sermons.previous_page_number }}">
+						<i class="fas fa-angle-left"></i>
+					</a>
+				{% endif %}
+				{% for num in all_sermons.paginator.page_range %}
+					{% if all_sermons.number == num %}
+						<span class="pagination-number pagination-current"> {{ num }} </span>
+					{% elif num > all_sermons.number|add:'-3' and num < all_sermons.number|add:'3' %}
+						<a class="pagination-number" href="?page={{ num }}"> {{ num }} </a>
 					{% endif %}
-					{% for num in all_sermons.paginator.page_range %}
-						{% if all_sermons.number == num %}
-							<span class="pagination-number pagination-current"> {{ num }} </span>
-						{% elif num > all_sermons.number|add:'-3' and num < all_sermons.number|add:'3' %}
-							<a class="pagination-number" href="?page={{ num }}"> {{ num }} </a>
-						{% endif %}
-					{% endfor %}
-					{% if all_sermons.has_next %}
-						<a class="pagination-action" href="?page={{ all_sermons.next_page_number }}">
-							<i class="fas fa-angle-right"></i>
-						</a>
-						<a class="pagination-action" href="?page={{ all_sermons.paginator.num_pages }}">
-							<i class="fas fa-angle-double-right"></i>
-						</a>
-					{% endif %}
-				{% endif%}
-			</div>
+				{% endfor %}
+				{% if all_sermons.has_next %}
+					<a class="pagination-action" href="?page={{ all_sermons.next_page_number }}">
+						<i class="fas fa-angle-right"></i>
+					</a>
+					<a class="pagination-action" href="?page={{ all_sermons.paginator.num_pages }}">
+						<i class="fas fa-angle-double-right"></i>
+					</a>
+				{% endif %}
+			{% endif%} -->
+		</div>
 
 	</div>
-</div>	
+
+
+
+
+
+
+
 {% endblock %}
