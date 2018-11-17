@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/style-index.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+<div class="header-wrapper">
+	<h2 class="header">Contact Us</h2>
+
+	<p class="subheader">Use the form below to contact us.</p>
+</div>
+
+
+	{% if messages %}
+		<ul>
+			{% for message in messages %}
+				<div class="alert alert-primary messages" role="alert">
+					<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				</div>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+
+	<div>
+		<form class="" action="" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+
+			<div class="subject-wrapper">
+				<label id="subject-label" for="">Subject</label>
+					<input type="text" placeholder="Enter subject" id="subject" name="subject" value="{{ subject }}">
+			</div>
+
+			<div class="name-wrapper">
+				<label id="name-label" for="">Name</label>
+					<input type="text" placeholder="Enter your name" id="name" name="name" value="{{ name }}">
+			</div>
+
+			<div class="email-wrapper">
+				<label for="">Email address</label>
+					<input type="text" placeholder="Enter your email" id="email" name="email" value="{{ email }}">
+			</div>
+
+			<div class="message-wrapper">
+					<label for="">Message</label>
+					<textarea name="body" id="body" placeholder="Enter your message" value="{{ body }}" rows="11" required></textarea>
+			</div>
+
+			<button class="btn btn-primary" type="submit">Submit</button>
+
+			</form>
+	</div>
+
+
+
+
+
+{% endblock %}

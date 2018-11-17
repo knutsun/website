@@ -83,7 +83,7 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+	/* grid-template-rows: repeat(2, 1fr); */
 	grid-row-gap: 0;
 }
 .wrapper-header {
@@ -98,12 +98,7 @@
 	margin: auto 0;
 	grid-column: 1 / span 8;
 	grid-row: 2;
-}
-#search-bar {
-	margin: auto 0;
-}
-input {
-	width: 100%;
+  margin: 5% 5% 5% 5%;
 }
 
 .wrapper-messages {
@@ -130,14 +125,9 @@ input {
 
   }
   .wrapper-search {
-  	margin: auto 0;
-  	grid-column: 2 / span 6;
-  }
-  #search-bar {
-  	margin: auto 0;
-  }
-  input {
-  	width: 80%;
+  	/* margin: auto 0; */
+    margin: 10% 0 5% 0;
+  	grid-column: 2 / span 4;
   }
 
   .wrapper-messages {
@@ -148,4 +138,11 @@ input {
   	grid-column: 2 / span 6;
     margin: auto 0;
   }
+}
+@media(min-width: 1000px){
+  .wrapper-search {
+  	/* margin: auto 0; */
+  	grid-column: 2 / span 2;
+  }
+
 }

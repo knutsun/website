@@ -1,0 +1,44 @@
+/*Set display for mobile*/
+	#map {
+		height: 60%;
+		width: 80%;
+		margin: 5% 10% 5% 10%;
+	}
+	.header-wrapper {
+	  display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	  grid-template-rows: repeat(2, 1fr);
+	  grid-row-gap: 0;
+	  background-color: #E8EBED;
+	}
+	.header {
+	  grid-row: 2;
+	  text-align: center;
+	  margin-top: 5%;
+	}
+	.subheader {
+	  grid-row: 3;
+	  text-align: center;
+	}
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 700px) {
+	#map {
+		height: 50%;
+		width: 70%;
+		margin: 0% 15% 2% 15%;
+	}
+	.header {
+		margin-top: 3%;
+  }
+}
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 1000px) {
+	#map {
+		height: 50%;
+		width: 70%;
+		margin: 0% 15% 2% 15%;
+	}
+	.header {
+		margin-top: 2%;
+  }
+}

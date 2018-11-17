@@ -1,0 +1,109 @@
+/* Set display for mobile */
+.header-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 0;
+  background-color: #E8EBED;
+}
+.header {
+  grid-row: 2;
+  text-align: center;
+  margin-top: 5%;
+}
+.subheader {
+  grid-row: 3;
+  text-align: center;
+}
+.subject-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 45% 65%;
+  grid-row-gap: 0;
+  background-color: white;
+  margin: 10% 5% 3% 5%;
+}
+.name-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 45% 65%;
+  grid-row-gap: 0;
+  background-color: white;
+  margin: 5% 5% 3% 5%;
+}
+.email-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 45% 65%;
+  grid-row-gap: 0;
+  background-color: white;
+  margin: 5% 5% 3% 5%;
+}
+.message-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 10% 90%;
+  grid-row-gap: 0;
+  background-color: white;
+  margin: 5% 5% 3% 5%;
+}
+input {
+  padding: 2%;
+}
+.btn {
+  margin: 5% 5% 10% 5%;
+  width: 90%;
+  padding: 3%;
+}
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 700px) {
+  .header {
+    margin-top: 2%;
+  }
+  .subject-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 60%;
+  }
+  .name-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 60%;
+  }
+  .email-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 60%;
+  }
+  .message-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 80%;
+  }
+  .btn {
+    margin: 2% 5% 10% 5%;
+    width: 20%;
+    padding: 2%;
+  }
+
+
+}
+@media only screen and (min-width: 1000px) {
+  .subject-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 30%;
+  }
+  .name-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 30%;
+  }
+  .email-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 30%;
+  }
+  .message-wrapper {
+      margin: 3% 15% 1% 5%;
+      width: 60%;
+  }
+  .btn {
+    margin: 2% 5% 10% 5%;
+    width: 15%;
+    padding: 1%;
+  }
+}
