@@ -8,30 +8,22 @@
 
 {% block body %}
 
-<div class="">
-  <div class="row">
-    <div class="col">
-      <h1 class="header">{{ sermon.title }}</h1>
+<div class="wrapper">
+
+    <h1 class="header">{{ sermon.title }}</h1>
+
+    <h3 class="date">{{ sermon.date }}</h3>
+
+    <div class="audio">
+      		<audio controls id="track" preload="metadata">
+      			<source src="{{ sermon.file.url }}" type="audio/mpeg">
+      		</audio>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h3 class="subheader">Delivered on {{ sermon.date }}</h3>
-    </div>
-  </div>
-  <div class="row audio-player">
-  	<div class="col">
-  		<audio controls id="track" preload="metadata">
-  			<source src="{{ sermon.file.url }}" type="audio/mpeg">
-  		</audio>
-  	</div>
-  </div>
-  <div class="row">
-  	<div class="col">
-      <p>{{ sermon.file.size|filesizeformat }}</p>
-  		<p id="description">{{ sermon.description }}</p>
-  	</div>
-  </div>
+
+</div>
+<div class="description">
+    <p>{{ sermon.file.size|filesizeformat }}</p>
+    <p>{{ sermon.description }}</p>
 </div>
 
 {% load static %}
