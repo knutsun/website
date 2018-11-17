@@ -20,7 +20,7 @@ class index(FormView):
 
 	#process form data
 	def post(self, request):
-		form = self.form_class(request.POST, request.FILES) #context is POST
+		form = self.form_class(request.POST) #context is POST
 
 		if form.is_valid():
 			form.save()
