@@ -50,7 +50,6 @@
 							</table>
 						</div>
 	        </div>
-	      </div>
 	    </section>
 
     <!-- Section B --->
@@ -58,7 +57,7 @@
       <ul>
         <li>
           <div class="card">
-            <img src="{% static 'img/church.png' %}" alt="">
+            <img src="{% static 'img/church.png' %}" alt="Gateway Baptist Church">
             <div class="card-content">
               <h3 class="card-title">WMU Meeting</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id temporibus,
@@ -70,7 +69,7 @@
         </li>
         <li>
           <div class="card">
-            <img src="{% static 'img/church.png' %}" alt="">
+            <img src="{% static 'img/church.png' %}" alt="Gateway Baptist Church">
             <div class="card-content">
               <h3 class="card-title">Sunday Night Sing</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id temporibus,
@@ -82,7 +81,7 @@
         </li>
         <li>
           <div class="card">
-            <img src="{% static 'img/church.png' %}" alt="">
+            <img src="{% static 'img/church.png' %}" alt="Gateway Baptist Church">
             <div class="card-content">
               <h3 class="card-title">Brotherhood Meeting</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id temporibus,
@@ -98,7 +97,7 @@
   <!-- Section C --->
     <section id="section-c" class="grid">
       <div class="content-wrap">
-        <h2 class="content-title">Traditionalist Baptist Ministry</h2>
+        <h2 class="content-title">About our Church</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ipsum fuga sed
           aut obcaecati provident dolorum, perferendis laboriosam neque deleniti.</p>
       </div>
@@ -107,17 +106,25 @@
     <!-- Section D --->
     <section id="section-d" class="grid">
       <div class="box">
-        <h2 id="content-title">About Our Church</h2>
+        <h2 id="content-title">Listen to Sermons</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione architecto
           quisquam maiores est provident laudantium ullam eos, quam error rerum?</p>
       </div>
 			<div class="box">
-        <h2 class="content-title">Contact Us</h2>
+        <h2 class="content-title">Ministries</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro possimus animi
           voluptatibus vel accusamus id quia minus voluptatem quae tenetur!</p>
         <p>Contact jacksieverd@gatewaybaptist.com</p>
       </div>
     </section>
+
+		<section id="section-e" class="grid">
+			<div class="content-wrap">
+				<h2 class="content-title"><a id="contact-link" href="{% url 'contact:index' %}"> Contact Us</a></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ipsum fuga sed
+					aut obcaecati provident dolorum, perferendis laboriosam neque deleniti.</p>
+			</div>
+		</section>
 
   </main>
 

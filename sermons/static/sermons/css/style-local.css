@@ -3,8 +3,6 @@
 }
 .header {
   padding-top: 60px;
-  color:black;
-  font-family: 'PT Sans Caption', sans-serif;
 }
 .messages {
     font-size: 18px;
@@ -67,7 +65,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #53739B;
+    background-color: #357096;
     color: white;
     font-size: 18px;
 }
@@ -89,9 +87,13 @@
 .wrapper-header {
 	display: grid;
 	margin: 5% 0 0 0;
-	grid-column: 2 / span 6;
+	grid-column: 1 / span 8;
 	text-align: center;
-
+  background-color: #0D4970;
+}
+.header {
+  color: white;
+  font-size: 40px;
 }
 .wrapper-search {
 	display: grid;
@@ -121,7 +123,7 @@
   }
   .wrapper-header {
   	margin: auto 0;
-  	grid-column: 3 / span 4;
+  	/* grid-column: 3 / span 4; */
 
   }
   .wrapper-search {

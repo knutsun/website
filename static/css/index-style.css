@@ -96,8 +96,8 @@ p {
 }
 
 #section-c {
-  background: #fff;
-  color: #333;
+  background: #0D4970;
+  color: #FFF;
   padding: 2em;
 }
 
@@ -107,7 +107,14 @@ p {
 }
 
 #section-d .box:first-child {
-  background: #2690d4;
+  background: #FFF;
+  color: black;
+}
+
+#section-e {
+  background: #4DC58B;
+  color: #fff;
+  padding: 2em;
 }
 
 #main-footer {
@@ -119,6 +126,11 @@ p {
 
 #main-footer a {
   color: #2690d4;
+  text-decoration: none;
+}
+
+#contact-link {
+  color: white;
   text-decoration: none;
 }
 
