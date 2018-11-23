@@ -1,0 +1,48 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'events/css/style.css' %}">
+
+<h2 class="cap">November 2018</h2>
+
+<table id="calendar">
+  <tr class="weekdays">
+    <th>Mon</th>
+    <th>Tues</th>
+    <th>Wed</th>
+    <th>Thurs</th>
+    <th>Fri</th>
+    <th>Sat</th>
+    <th>Sun</th
+  </tr>
+
+<!-- day = tuple where first value is the date e.g. 1-31,
+and the second value is the weekday e.g. 0-6
+day.0 = the first value of the tuple
+day.1 = the second value of the tuple -->
+
+<tr class="days">
+
+  {% for date, event in foobar %}
+
+    {% if date == 0 %}
+    <td class="day"></td>
+
+    {% elif date == event.date.day %}
+    <td>{{ date }}
+    <div class="event">
+      <div class="event-desc">
+        {{ event }}
+      </div>
+          <div class="event-time">
+             {{ event.start_time }} to {{ event.end_time }}
+          </div>
+        </div>
+    </td>
+
+    {% else %}
+      <td class="day">{{ date }}</td>
+    {% endif %}
+
+  {% endfor %}
+
+</tr>
+</table>
