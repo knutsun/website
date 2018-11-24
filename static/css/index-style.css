@@ -8,7 +8,7 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
-  padding-top: 58px;
+  padding-top: 56px;
 }
 img {
   display: block;
@@ -107,6 +107,8 @@ p {
   margin-bottom: 1em;
   background: #fff;
   color: #333;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .card {
   display: grid;
@@ -127,7 +129,7 @@ p {
 .date-card {
   grid-row: 2;
   text-align: center;
-  margin: 0% 25% 0% 25%;
+  margin: 0% 30% 0% 30%;
 }
 .month {
   display: block;
@@ -136,7 +138,6 @@ p {
   font-size: 1rem;
   font-weight: bold;
   padding: .3rem;
-
 }
 .day {
   display: block;
@@ -147,7 +148,7 @@ p {
   padding-bottom: .5rem;
 }
 #section-c {
-  background: #0D4970;
+  background: #4DC58B;
   color: #FFF;
   padding: 2em;
 }
@@ -163,7 +164,7 @@ p {
 }
 
 #section-e {
-  background: #4DC58B;
+  background: #6d0f84;
   color: #fff;
   padding: 2em;
 }

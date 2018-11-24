@@ -90,6 +90,8 @@
 	grid-column: 1 / span 8;
 	text-align: center;
   background-color: #0D4970;
+  /* background-image: linear-gradient(#0D4970, #357096); */
+
 }
 .header {
   color: white;
