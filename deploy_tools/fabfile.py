@@ -1,7 +1,7 @@
-ssh.util.log_to_file("paramiko.log", 10)
 import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
+ssh.util.log_to_file("paramiko.log", 10)
 
 REPO_URL = 'https://github.com/knutsun/website.git'
 
