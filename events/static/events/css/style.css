@@ -113,7 +113,21 @@ table td:hover {
 /* ============================
 				Mobile Responsiveness
    ============================*/
+@media(min-width: 700px){
+.header {
+	 margin-top: 5%;
+}
+.wrapper-header {
+	margin: auto 0;
+	/* grid-column: 3 / span 4; */
 
+}
+@media(min-width: 1300px){
+	.calendar-wrapper {
+		margin: 2% 10% 10% 10%;
+	}
+
+}
 
 @media(max-width: 768px) {
 

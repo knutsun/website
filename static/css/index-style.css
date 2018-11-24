@@ -26,13 +26,27 @@ p {
 .btn {
   display: inline-block;
   margin: .5em 0;
+  background: #0D4970;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+}
+.btn-1 {
   background: #333;
+  display: inline-block;
+  margin: .5em 0;
+  /* background: #0D4970; */
   color: #fff;
   text-decoration: none;
   padding: 1em 2em;
   border: 1px solid #666;
 }
 .btn:hover {
+  background: #eaeaea;
+  color: #333;
+}
+.btn-1:hover {
   background: #eaeaea;
   color: #333;
 }
@@ -47,7 +61,7 @@ p {
 
 #showcase .bg-image {
   position: absolute;
-  background: #333 url('../img/church.png');
+  background: #333 url('../img/church.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
