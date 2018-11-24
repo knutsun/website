@@ -1,9 +1,7 @@
 import random, os
 from fabric.contrib.files import append, exists
-from fabric.api import cd, env, local, run
+from fabric.api import cd, env, local, run, execute, parallel
 from fabric.network import ssh
-
-env.use_ssh_config = False
 
 REPO_URL = 'https://github.com/knutsun/website.git'
 
@@ -32,7 +30,8 @@ def _update_virtualenv():
 
 def _create_or_update_dotenv():
     append('.env', 'DJANGO_DEBUG_FALSE=y')
-    append('.env', f'POSTGRES_PASSWORD={env.dbpass}')
+    append('.env', f'POSTGRES_PASSWORD=123god1;')
+    append('.env', 'POSTGRES_PASSWORD=123god1;')
     append('.env', f'SITENAME={env.host}')
     current_contents = run('cat .env')
     if 'DJANGO_SECRET_KEY' not in current_contents:
