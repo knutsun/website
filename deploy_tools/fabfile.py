@@ -33,7 +33,7 @@ def _update_virtualenv():
 
 def _create_or_update_dotenv():
     append('.env', 'DJANGO_DEBUG_FALSE=y')
-    append('.env', 'key_filename=~/.ssh/id_rsa.pub')
+    # append('.env', 'key_filename=~/.ssh/id_rsa')
     append('.env', f'SITENAME={env.host}')
     current_contents = run('cat .env')
     if 'DJANGO_SECRET_KEY' not in current_contents:
