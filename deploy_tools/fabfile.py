@@ -1,11 +1,9 @@
-import random
+import random, os
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
 from fabric.network import ssh
 
-env.use_ssh_config = True
-# env.key_filename = "~/.ssh/id_rsa"
-# ssh.util.log_to_file("paramiko.log", 10)
+env.use_ssh_config = False
 
 REPO_URL = 'https://github.com/knutsun/website.git'
 
