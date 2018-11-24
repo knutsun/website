@@ -35,9 +35,12 @@ else:
     SECRET_KEY = 'z+tg8ylr*tmcb9^7m+df_8^)stt^k6ahlh29d(rwlny*f$c_)7'
     ALLOWED_HOSTS = ['*']
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
     STATICFILES_DIRS = (
       os.path.join(BASE_DIR, 'static/'),
     )
+    PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
