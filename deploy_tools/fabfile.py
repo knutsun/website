@@ -4,7 +4,7 @@ from fabric.api import cd, env, local, run
 from fabric.network import ssh
 
 env.use_ssh_config = True
-ssh.util.log_to_file("paramiko.log", 10)
+# ssh.util.log_to_file("paramiko.log", 10)
 
 REPO_URL = 'https://github.com/knutsun/website.git'
 
