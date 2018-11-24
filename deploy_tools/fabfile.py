@@ -1,3 +1,4 @@
+ssh.util.log_to_file("paramiko.log", 10)
 import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
