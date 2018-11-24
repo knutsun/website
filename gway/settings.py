@@ -18,6 +18,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     ALLOWED_HOSTS = [os.environ['SITENAME']]
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
     ADMINS = [('Chaz', 'csselph@gmail.com')]
     DATABASES = {
     'default': {
