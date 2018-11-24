@@ -43,7 +43,7 @@ else:
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gway',
         'USER': 'postgres',
-        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
