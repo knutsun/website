@@ -1,4 +1,5 @@
 
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -76,7 +77,7 @@ p {
 }
 
 #section-b {
-  padding: 2em 1em 1em;
+  padding: 2em .5em 2em .5em;
 }
 
 #section-b ul {
@@ -86,15 +87,51 @@ p {
 }
 
 #section-b li {
+  margin-top: 1em;
+  margin-left: .5em;
+  margin-right: .5em;
   margin-bottom: 1em;
   background: #fff;
   color: #333;
 }
-
-.card-content {
-  padding: 1.5em;
+.card {
+  display: grid;
+  grid-template-rows: 20% 20% 20% 20% 20%;
 }
+.card-content {
+  padding: .2em;
+}
+.card-title {
+  grid-row: 1;
+  padding-left: .1em;
+  padding-right: .1em;
+}
+.card-time {
+  font-size: 22px;
+  margin-top: 1em;
+}
+.date-card {
+  grid-row: 2;
+  text-align: center;
+  margin: 0% 25% 0% 25%;
+}
+.month {
+  display: block;
+  background-color: #6d0f84;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .3rem;
 
+}
+.day {
+  display: block;
+  font-size: 1.4rem;
+  border: 4px solid;
+  color: #6d0f84;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
 #section-c {
   background: #0D4970;
   color: #FFF;

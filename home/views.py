@@ -10,7 +10,7 @@ def index(request):
     # days = cal.itermonthdays2(2018, 11)
     all_events = Event.objects.all()
     event_count = Event.objects.all().count()
-    three_events = Event.objects.all()[:3]
+    three_events = Event.objects.all().order_by('date')[:3]
 
     context = {
     'all_events': all_events,

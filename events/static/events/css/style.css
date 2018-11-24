@@ -1,45 +1,3 @@
-/* table {
-    margin: 0% 0% 0% 0%;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    border-radius: 1em;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    box-shadow: 5px 10px 18px #888888;
-    table-layout: fixed;
-}
-
-table, th {
-    padding: 8px;
-}
-th, td {
-  width: 100px;
-  line-height: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-table td {
-  padding: 50px;
-  border: 1px solid black;
-}
-table tr:nth-child(even){
-    background-color: #f2f2f2;
-}
-
-table td:hover {
-    background-color: #D9E9FF;
-
-}
-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #357096;
-    color: white;
-    font-size: 18px;
-} */
-
 /* declare a 7 column grid on the table */
 #calendar {
 	width: 100%;
@@ -64,13 +22,20 @@ table td:hover {
     background-color: #D9E9FF;
 
 }
-
-.cap {
+.calendar-wrapper {
+	margin: 2% 5% 5% 5%;
+}
+.wrapper-header {
+	display: grid;
+	margin: 5% 0 0 0;
+	grid-column: 1 / span 8;
 	text-align: center;
-  grid-column: 1 / -1;
-  font-size: 130%;
-  font-weight: bold;
-  padding: 10px 0;
+  background-color: #0D4970;
+}
+.header {
+  color: white;
+  font-size: 40px;
+	padding-top: 60px;
 }
 
 #calendar a {
@@ -86,7 +51,6 @@ table td:hover {
 
 #calendar .weekdays {
    background-color: #357096;
-	 border-radius: 1em;
 }
 
 

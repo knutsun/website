@@ -2,7 +2,7 @@
     box-shadow: 5px 10px 18px #888888;
 }
 .header {
-  padding-top: 60px;
+  /* padding-top: 60px; */
 }
 .messages {
     font-size: 18px;
@@ -86,7 +86,7 @@
 }
 .wrapper-header {
 	display: grid;
-	margin: 5% 0 0 0;
+	margin: 0% 0 0 0;
 	grid-column: 1 / span 8;
 	text-align: center;
   background-color: #0D4970;
@@ -119,7 +119,7 @@
 /*Set display for tablets and desktops*/
 @media(min-width: 700px){
   .header {
-    margin-top: 5%;
+    /* margin-top: 5%; */
   }
   .wrapper-header {
   	margin: auto 0;
