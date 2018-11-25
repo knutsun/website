@@ -30,7 +30,7 @@ def _update_virtualenv():
 
 def _create_or_update_dotenv():
     append('.env', 'DJANGO_DEBUG_FALSE=y')
-    append('.env', f'POSTGRES_PASSWORD=123god1;')
+    # append('.env', f'POSTGRES_PASSWORD=123god1;')
     append('.env', 'POSTGRES_PASSWORD=123god1;')
     append('.env', f'SITENAME={env.host}')
     current_contents = run('cat .env')
