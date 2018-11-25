@@ -1,0 +1,2 @@
+sudo vim ~/.bash_profile
+add export DJANGO_DEBUG_FALSE=y, etc 
