@@ -12,7 +12,7 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
- width: 100%;
+	width: 100%;
 }
 
 table tr:nth-child(even){
@@ -23,11 +23,11 @@ table td:hover {
 
 }
 .calendar-wrapper {
-	margin: 2% 5% 5% 5%;
+	margin: 5% 5% 5% 5%;
 }
 .wrapper-header {
 	display: grid;
-	margin: 5% 0 0 0;
+	margin: 2% 0 0 0;
 	grid-column: 1 / span 8;
 	text-align: center;
   background-color: #0D4970;
@@ -52,7 +52,6 @@ table td:hover {
 #calendar .weekdays {
    background-color: #357096;
 }
-
 
 #calendar .weekdays th {
 	text-align: center;
@@ -111,25 +110,10 @@ table td:hover {
 }
 
 /* ============================
-				Mobile Responsiveness
+				Tablet > Desktop Responsiveness
    ============================*/
-@media(min-width: 700px){
-.header {
-	 margin-top: 5%;
-}
-.wrapper-header {
-	margin: auto 0;
-	/* grid-column: 3 / span 4; */
 
-}
-@media(min-width: 1300px){
-	.calendar-wrapper {
-		margin: 2% 10% 10% 10%;
-	}
-
-}
-
-@media(max-width: 768px) {
+@media(max-width: 700px) {
 
 	#calendar .weekdays, #calendar .other-month {
 		display: none;
@@ -153,5 +137,11 @@ table td:hover {
 
 	#calendar .date {
 		align-self: flex-start;
+	}
+}
+
+@media(min-width: 1300px){
+	.calendar-wrapper {
+		margin: 4% 15% 15% 15%;
 	}
 }

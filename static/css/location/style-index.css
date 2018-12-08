@@ -27,10 +27,10 @@
 	#map {
 		height: 50%;
 		width: 70%;
-		margin: 10% 15% 2% 15%;
+		margin: 8% 15% 2% 15%;
 	}
 	.header {
-		margin-top: 3%;
+		/* margin-top: 3%; */
   }
 }
 /*Set display for tablets and desktops*/
