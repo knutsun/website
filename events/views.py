@@ -8,10 +8,14 @@ import itertools
 
 
 def index(request):
-    cal = calendar.Calendar()
-    days = cal.itermonthdays2(2018, 11)
     all_events = Event.objects.all()
     event_count = Event.objects.all().count()
+    now = datetime.datetime.now()
+    current_month_str = now.strftime("%B")
+    current_month = now.month
+    current_year = now.year
+    cal = calendar.Calendar()
+    days = cal.itermonthdays2(current_year, current_month)
 
     date_list = []
     days_in_date_list = []
@@ -37,8 +41,12 @@ def index(request):
 
     context = {
     'all_events': all_events,
+    'event_count': event_count,
     'days': days,
     'date_list':date_list,
     'foobar': foobar,
+    'current_month_str': current_month_str,
+    'current_month': current_month,
+    'current_year': current_year
     }
     return render(request, 'events/index.html', context)

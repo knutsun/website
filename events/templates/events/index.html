@@ -8,7 +8,7 @@
 {% block body %}
 
 <div class="wrapper-header">
-  <h2 class="header">November 2018</h2>
+  <h2 class="header">{{ current_month_str }} {{ current_year }}</h2>
 </div>
 
 <div class="calendar-wrapper">
@@ -35,7 +35,7 @@
       {% if date == 0 %}
       <td class="day"></td>
 
-      {% elif date == event.date.day %}
+      {% elif date == event.date.day and current_month == event.date.month %}
       <td>{{ date }}
       <div class="event">
         <div class="event-desc">
