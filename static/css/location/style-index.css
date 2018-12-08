@@ -14,7 +14,6 @@
 	.header {
 	  grid-row: 2;
 	  text-align: center;
-	  margin-top: 5%;
 		color: white;
 	}
 	.subheader {
@@ -22,25 +21,25 @@
 	  text-align: center;
 		color: white;
 	}
-/*Set display for tablets and desktops*/
+/*Set display for tablets*/
 @media only screen and (min-width: 700px) {
 	#map {
 		height: 50%;
 		width: 70%;
-		margin: 8% 15% 2% 15%;
+		margin: 8% 15% 5% 15%;
 	}
 	.header {
-		/* margin-top: 3%; */
+		margin-top: 1%;
   }
 }
-/*Set display for tablets and desktops*/
+/*Set display for desktops*/
 @media only screen and (min-width: 1000px) {
 	#map {
 		height: 50%;
 		width: 70%;
-		margin: 10% 15% 2% 15%;
+		margin: 1% 15% 5% 15%;
 	}
 	.header {
-		margin-top: 2%;
+		/* margin-top: 2%; */
   }
 }
