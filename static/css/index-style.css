@@ -97,16 +97,16 @@ p {
 }
 
 #section-b li {
-  /* margin-top: 1em;
+  margin-top: 1em;
   margin-left: .5em;
   margin-right: .5em;
-  margin-bottom: 1em; */
+  margin-bottom: 1em;
   padding: 0;
   background: #fff;
   color: #333;
   border-radius: 20px;
   overflow: hidden;
-  border: 5px solid #02273F;
+  border: 5px solid #195E8B;
 }
 .card {
   display: grid;
@@ -205,6 +205,7 @@ p {
   overflow: hidden;
   box-shadow: 5px 10px 18px #888888;
   background-color: white;
+  border: 1px solid black;
 }
 .content-table th {
   padding-top: 12px;
