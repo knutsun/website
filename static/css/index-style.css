@@ -106,7 +106,7 @@ p {
   color: #333;
   border-radius: 20px;
   overflow: hidden;
-  border: 5px solid #195E8B;
+  border: 7px solid #195E8B;
 }
 .card {
   display: grid;
@@ -253,6 +253,6 @@ p {
 
   #section-b li {
     width: 31%;
-    border: 7px solid #195E8B;
+    border: 6px solid #195E8B;
   }
 }
