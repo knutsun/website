@@ -1,0 +1,39 @@
+/*Set display for mobile*/
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: #0D4970;
+  color: white;
+  margin-top: 14%;
+}
+.header {
+  text-align: center;
+}
+.date {
+  text-align: center;
+}
+.description {
+  margin: 10% 10% 0 10%;
+}
+
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 700px) {
+  .wrapper {
+    margin-top: 2%;
+  }
+  .header {
+    margin-top: 3%;
+  }
+
+  .description {
+    margin: 7% 10% 0 10%;
+  }
+
+
+}
+@media only screen and (min-width: 1000px) {
+  .description {
+    margin: 8% 15% 0 15%;
+  }
+
+}

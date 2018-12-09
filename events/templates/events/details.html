@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'events/css/style-details.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <h1 class="header">{{ event.name }}</h1>
+</div>
+
+<div class="description">
+    <h3 class="">{{ event.date }}</h3>
+    <h4>{{ event.start_time }} to {{ event.end_time }}</h4>
+    <p>{{ event.long_description }}</p>
+</div>
+
+{% endblock %}

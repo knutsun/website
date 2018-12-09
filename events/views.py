@@ -54,3 +54,28 @@ def index(request):
     'current_year': current_year
     }
     return render(request, 'events/index.html', context)
+
+class EventDetailView(DetailView):
+    template_name = 'events/details.html'
+    context_object_name = 'event'
+    queryset = Event.objects.all()
+
+    def get_context_data(self, **kwargs):
+    	context = super(EventDetailView, self).get_context_data(**kwargs)
+    	return context
+
+    def get_slug_field(self):
+        slug = super(EventDetailView, self).get_slug_field()
+        return slug
+
+# def EventDetailView(request, year, month, day):
+#     events = Event.objects.all()
+#
+#     template = 'events/details.html'
+#     context = {
+#         'event':event,
+#         'year':year,
+#         'month':month,
+#         'day':day
+#     }
+#     return render(request, template, context)

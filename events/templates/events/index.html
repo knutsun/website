@@ -36,7 +36,7 @@
       <td>{{ date }}
       <div class="event">
         <div class="event-desc">
-          {{ event }}
+          <a href="{% url 'events:detail' event.date.year event.date.month event.date.day event.pk %}">{{ event }}</a>
         </div>
             <div class="event-time">
                {{ event.start_time }} to {{ event.end_time }}
