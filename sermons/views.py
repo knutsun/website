@@ -15,6 +15,8 @@ from django.core.paginator import Paginator
 def index(request):
 	all_sermons = Sermons.objects.all()
 	sermon_count = Sermons.objects.all().count()
+	first_sermon = Sermons.objects.order_by('date')[0]
+	last_sermon = Sermons.objects.order_by('date')[sermon_count-1]
 
 	# paginator = Paginator(all_sermons, 10)
 	# page = request.GET.get('page')
@@ -39,6 +41,8 @@ def index(request):
 			search_result_count = str(search_result_count) + " results"
 	context = {
 		'all_sermons': all_sermons,
+		'first_sermon': first_sermon,
+		'last_sermon': last_sermon,
 		'search_term': search_term,
 		'search_result_count': search_result_count,
 		'sermon_count': sermon_count
@@ -54,30 +58,3 @@ class SermonDetailView(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(SermonDetailView, self).get_context_data(**kwargs)
 		return context
-
-
-class AddSermonView(LoginRequiredMixin, PermissionRequiredMixin, FormView):
-	template_name = 'sermons/add.html'
-	form_class = SermonForm
-	success_url = 'sermons/add.html'
-	permission_required = 'sermons.can_submit'
-
-	#display blank form
-	def get(self, request):
-		form = self.form_class(None) #context is None; blank form data
-		return render(request, self.template_name, {'form': form})
-
-	#process form data
-	def post(self, request):
-		form = self.form_class(request.POST, request.FILES) #context is POST
-
-		if form.is_valid():
-			form.save()
-			messages.success(request, "Sermon successfully uploaded", extra_tags="message_success")
-			return render(request, self.success_url)
-		else:
-			return render(request, self.template_name, {'form': form})
-
-	@method_decorator(login_required)
-	def dispatch(self, request, *args, **kwargs):
-		return super(AddSermonView, self).dispatch(request, *args, **kwargs)

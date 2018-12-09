@@ -22,52 +22,62 @@
     <!-- Section A -->
 	    <section id="section-a" class="grid">
 	      <div class="content-wrap">
-	        <h2 class="content-title">Service Times</h2>
-	        <hr>
+	        <h1 class="content-title">Service Times</h1>
+
 	        <div class="content-service-wrapper">
 	          <table class="content-table">
 							<tr>
 								<th>Sunday</th>
+								<th>Wednesday</th>
 							</tr>
 	            <tr>
-	              <td>Sunday School <br>9:45 am</td>
+								<td>Sunday School</td>
+								<td>Evening Worship</td>
 							</tr>
 							<tr>
-								<td>Morning worship <br>11 am</td>
+								<td>9:45 am</td>
+								<td>7:30 pm</td>
 							</tr>
 							<tr>
-								<td>Evening worship <br>6 pm</td>
+								<td>Morning Worship</td>
+							</tr>
+							<tr>
+								<td>11 am</td>
+							</tr>
+							<tr>
+								<td>Evening Worship</td>
+							</tr>
+							<tr>
+								<td>6 pm</td>
 							</tr>
 	          </table>
-
-							<table class="content-table">
-								<tr>
-									<th>Wednesday</th>
-								</tr>
-								<tr>
-									<td>Evening worship <br>7 pm</td>
-								</tr>
-							</table>
 						</div>
 	        </div>
 	    </section>
 
 			<!-- Section B --->
+	<h1>Upcoming events</h1>
 	<section id="section-b" class="grid">
 		<ul>
 			{% for event in three_events %}
 			<li>
 				<div class="card">
 					<div class="card-content">
-						<h3 class="card-title">{{ event.name }}</h3>
+						<div class="card-title"><h3>{{ event.name }}</h3></div>
 						<div class="date-card">
-							<div class="month">{{ event.date|date:'F' }}</div>
-							<div class="day">{{ event.date.day }}</div>
+							<div class="month">
+								{{ event.date|date:'F' }}
+							</div>
+							<div class="day">
+								{{ event.date.day }}
+							</div>
 						</div>
-						<div class="card-time">{{ event.start_time }} – {{ event.end_time }}</div>
-						<p>{{ event.short_description }}</p>
-						<button class="btn">View Details</button>
-					</div>
+						<div class="card-time">
+							{{ event.start_time }} – {{ event.end_time }}
+						</div>
+							<p>{{ event.short_description }}</p>
+							<button class="btn">View Details</button>
+						</div>
 				</div>
 			</li>
 			{% endfor %}
@@ -94,8 +104,8 @@
     <section id="section-d" class="grid">
       <div class="box">
         <h2 id="content-title">Listen to Sermons</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione architecto
-          quisquam maiores est provident laudantium ullam eos, quam error rerum?</p>
+        <p>Visit our <a href="{% url 'sermons:index' %}">Sermon Archive</a> to listen to previous sermons delivered at
+				 Gateway Baptist Church </p>
       </div>
 			<div class="box">
         <h2 class="content-title">Ministries</h2>

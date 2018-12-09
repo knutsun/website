@@ -28,14 +28,18 @@ def index(request):
 
     event_list_order_by_date = Event.objects.all().order_by('date')
     event_list = []
-    x = 0
+
     for date in days_in_date_list:
-        if(x < event_count):
-            if(event_list_order_by_date[x].date.day == date):
-                event_list.append(event_list_order_by_date[x])
-                x = x + 1
-            else:
-                event_list.append('None')
+        y = 0
+        for event in event_list_order_by_date:
+            if(y < event_count):
+                if(event.date.day == date): #is this event's date = today's date?
+                    event_list.append(event)
+                else:
+                    y = y + 1
+                    if(y == event_count):
+                        event_list.append('None')
+
 
     foobar = zip(days_in_date_list, event_list)
 

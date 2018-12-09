@@ -47,6 +47,10 @@
 		 </div>
 
 		<div class="wrapper-table">
+			{% if sermon_count > 1 %}
+				<p>A total of {{ sermon_count }} sermons exist in the archive, dating from
+					{{ first_sermon.date }} to {{ last_sermon.date }}.</p>
+			{% endif %}
 			<table id="sermons" class="">
 				<tr>
 					<th onclick="sortTable(0)">Title</th>

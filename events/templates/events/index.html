@@ -32,10 +32,7 @@
 
     {% for date, event in foobar %}
 
-      {% if date == 0 %}
-      <td class="day"></td>
-
-      {% elif date == event.date.day and current_month == event.date.month %}
+      {% if date == event.date.day and current_month == event.date.month %}
       <td>{{ date }}
       <div class="event">
         <div class="event-desc">
@@ -47,8 +44,12 @@
           </div>
       </td>
 
+			{% elif date == 0 %}
+			<td class="day"></td>
+
       {% else %}
         <td class="day">{{ date }}</td>
+
       {% endif %}
 
     {% endfor %}
