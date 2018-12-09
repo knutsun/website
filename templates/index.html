@@ -79,7 +79,8 @@
 							{{ event.start_time }} – {{ event.end_time }}
 						</div>
 							<p>{{ event.short_description }}</p>
-							<button class="btn">View Details</button>
+							<button class="btn"><a href="{% url 'events:detail' event.date.year event.date.month event.date.day event.pk %}">
+								View Details</a></button>
 						</div>
 				</div>
 			</li>
