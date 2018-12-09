@@ -253,5 +253,6 @@ p {
 
   #section-b li {
     width: 31%;
+    border: 7px solid #195E8B;
   }
 }
