@@ -11,6 +11,8 @@ from django.utils.formats import date_format
 from django.views.generic import ListView, DetailView, FormView
 from django.utils.decorators import method_decorator
 from django.core.paginator import Paginator
+import audioread
+
 
 def index(request):
 	all_sermons = Sermons.objects.all()
@@ -45,8 +47,7 @@ def index(request):
 		'last_sermon': last_sermon,
 		'search_term': search_term,
 		'search_result_count': search_result_count,
-		'sermon_count': sermon_count
-
+		'sermon_count': sermon_count,
 	}
 	return render(request, 'sermons/index.html', context)
 
