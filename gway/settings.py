@@ -19,7 +19,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     MEDIA_ROOT = '/home/chaz/sites/staging-gateway.com/media/'
-    MEDIA_URL = '/media/'
+    # MEDIA_URL = '/media/'
     ADMINS = [('Chaz', 'csselph@gmail.com')]
     DATABASES = {
     'default': {
