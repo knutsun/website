@@ -16,8 +16,8 @@ class Sermons(models.Model):
 	def __str__(self):
 		return self.title
 
-	def get_duration(self):
-		import audioread
-		f = audioread.audio_open(self.file.path)
-		duration = round(f.duration/60)
-		return duration
+	# def get_duration(self):
+	# 	import audioread
+	# 	f = audioread.audio_open(self.file.path)
+	# 	duration = round(f.duration/60)
+	# 	return duration
