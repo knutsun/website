@@ -18,7 +18,8 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     ALLOWED_HOSTS = [os.environ['SITENAME']]
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    MEDIA_ROOT = '/home/chaz/sites/staging-gateway.com/media'
+    MEDIA_ROOT = '/home/chaz/sites/staging-gateway.com/media/')
+    MEDIA_URL = '/media/'
     ADMINS = [('Chaz', 'csselph@gmail.com')]
     DATABASES = {
     'default': {
@@ -37,6 +38,8 @@ else:
     ALLOWED_HOSTS = ['*']
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
     STATICFILES_DIRS = (
       os.path.join(BASE_DIR, 'static/'),
     )
@@ -153,8 +156,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
