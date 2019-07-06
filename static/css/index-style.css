@@ -1,3 +1,7 @@
+.images-class {
+  background-image:url('../img/jack.jpg');
+  background-size: cover;
+}
 body {
   margin: 0;
   background: #333;
