@@ -1,4 +1,8 @@
-import pytest
+from django.test import TestCase
 
-def test_sermons():
-	pass
+
+class TestHome(TestCase):
+
+	def test_sermons_page_template(self):
+		response = self.client.get('/')
+		self.assertTemplateUsed(response, 'index.html')
