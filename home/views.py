@@ -12,4 +12,5 @@ def index(request):
         'event_count': event_count,
         'three_events': three_events,
     }
+    
     return render(request, 'index.html', context)

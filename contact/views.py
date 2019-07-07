@@ -1,26 +1,26 @@
-from django.shortcuts import render
-from .models import Contact
-from django import forms
 from .forms import ContactForm
+from .models import Contact
+
+from django import forms
 from django.contrib import messages
-from django.utils.formats import date_format
-from django.views.generic import ListView, DetailView, FormView
+from django.shortcuts import render
+from django.views.generic import FormView
 
 
 class index(FormView):
 
-	template_name = 'contact/index.html'
-	form_class = ContactForm
-	success_url = 'contact/index.html'
+	self.template_name = 'contact/index.html'
+	self.form_class = ContactForm
+	self.success_url = 'contact/index.html'
 
-	#display blank form
+	# display blank form
 	def get(self, request):
-		form = self.form_class(None) #context is None; blank form data
+		form = self.form_class(None) # context is None; blank form data
 		return render(request, self.template_name, {'form': form})
 
-	#process form data
+	# process form data
 	def post(self, request):
-		form = self.form_class(request.POST) #context is POST
+		form = self.form_class(request.POST) # context is POST
 
 		if form.is_valid():
 			form.save()

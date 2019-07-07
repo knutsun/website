@@ -32,9 +32,9 @@ def index(request):
 
 		if search_result_count:
 			if search_result_count > 1:
-				search_result_count = '{} results'.format(search_result_count)
+				search_result_count = '{} results.'.format(search_result_count)
 			else:
-				search_result_count = '{} result'.format(search_result_count)
+				search_result_count = '{} result.'.format(search_result_count)
 		else:
 			messages.success(request, "Your search yielded no results.", extra_tags="message_failure")
 			all_sermons = Sermons.objects.all()
@@ -48,7 +48,9 @@ def index(request):
 		'search_result_count': search_result_count,
 		'sermon_count': sermon_count,
 	}
+	
 	return render(request, 'sermons/index.html', context)
+
 
 class SermonDetailView(DetailView):
 	template_name = 'sermons/details.html'

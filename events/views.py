@@ -9,7 +9,7 @@ import itertools
 
 def index(request):
     all_events = Event.objects.all()
-    event_count = Event.objects.all().count()
+    event_count = all_events.count()
     now = datetime.datetime.now()
     current_month_str = now.strftime("%B")
     current_month = now.month
@@ -17,11 +17,8 @@ def index(request):
     cal = calendar.Calendar()
     days = cal.itermonthdays2(current_year, current_month)
 
-    date_list = []
+    date_list = [ day for day in days ]
     days_in_date_list = []
-
-    for day in days:
-        date_list.append(day)
 
     for x, y in date_list:
         days_in_date_list.append(x)
@@ -44,14 +41,14 @@ def index(request):
     foobar = zip(days_in_date_list, event_list)
 
     context = {
-    'all_events': all_events,
-    'event_count': event_count,
-    'days': days,
-    'date_list':date_list,
-    'foobar': foobar,
-    'current_month_str': current_month_str,
-    'current_month': current_month,
-    'current_year': current_year
+        'all_events': all_events,
+        'event_count': event_count,
+        'days': days,
+        'date_list':date_list,
+        'foobar': foobar,
+        'current_month_str': current_month_str,
+        'current_month': current_month,
+        'current_year': current_year
     }
     return render(request, 'events/index.html', context)
 
@@ -67,15 +64,3 @@ class EventDetailView(DetailView):
     def get_slug_field(self):
         slug = super(EventDetailView, self).get_slug_field()
         return slug
-
-# def EventDetailView(request, year, month, day):
-#     events = Event.objects.all()
-#
-#     template = 'events/details.html'
-#     context = {
-#         'event':event,
-#         'year':year,
-#         'month':month,
-#         'day':day
-#     }
-#     return render(request, template, context)
