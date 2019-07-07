@@ -37,7 +37,7 @@
 				</ul>
 			{% else %}
 				{% if 'search' in request.GET %}
-					<p>Your search for "<em>{{ search_term }}</em>" yielded {{ search_result_count }}</p>
+					<p>Your search for "<em>{{ search_text }}</em>" yielded {{ search_result_count }}</p>
 				{% endif %}
 			{% endif %}
 		 </div>

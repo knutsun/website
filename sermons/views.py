@@ -10,42 +10,41 @@ from django.contrib import messages
 from django.utils.formats import date_format
 from django.views.generic import ListView, DetailView, FormView
 from django.utils.decorators import method_decorator
-from django.core.paginator import Paginator
 import audioread
 
 
 def index(request):
-	all_sermons = Sermons.objects.all()
-	sermon_count = Sermons.objects.all().count()
-	first_sermon = Sermons.objects.order_by('date')[0]
-	last_sermon = Sermons.objects.order_by('date')[sermon_count-1]
+	sermon_objs = Sermons.objects
+	all_sermons = sermon_objs.all()
+	sermon_count = all_sermons.count()
+	sermons_ordered_by_date = sermon_objs.order_by('date')
 
-	# paginator = Paginator(all_sermons, 10)
-	# page = request.GET.get('page')
-	# all_sermons = paginator.get_page(page)
+	search_text = None
+	search_result_count = None
 
-	search_term = ""
-	search_result_count = ""
 	if 'search' in request.GET:
-		search_term = request.GET['search']
+		search_text = request.GET['search']
 		all_sermons = all_sermons.filter(
-			Q(description__icontains=search_term) |
-			Q(title__icontains=search_term)
+			Q(description__icontains=search_text) |
+			Q(title__icontains=search_text)
 		)
-		search_result_count = all_sermons.filter(
-			Q(description__icontains=search_term) | Q(title__icontains=search_term)).count()
-		if search_result_count == 1:
-			search_result_count = str(search_result_count) + " result"
-		elif search_result_count == 0:
+		search_result_count = all_sermons.count()
+
+		if search_result_count:
+			if search_result_count > 1:
+				search_result_count = '{} results'.format(search_result_count)
+			else:
+				search_result_count = '{} result'.format(search_result_count)
+		else:
 			messages.success(request, "Your search yielded no results.", extra_tags="message_failure")
 			all_sermons = Sermons.objects.all()
-		else:
-			search_result_count = str(search_result_count) + " results"
+
+
 	context = {
 		'all_sermons': all_sermons,
-		'first_sermon': first_sermon,
-		'last_sermon': last_sermon,
-		'search_term': search_term,
+		'first_sermon': sermons_ordered_by_date[0],
+		'last_sermon': sermons_ordered_by_date[sermon_count-1],
+		'search_text': search_text,
 		'search_result_count': search_result_count,
 		'sermon_count': sermon_count,
 	}

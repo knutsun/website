@@ -12,6 +12,8 @@ urlpatterns = [
     path('location/', TemplateView.as_view(template_name='location/index.html'), name='location'),
     path('contact/', include('contact.urls')),
     path('events/', include('events.urls')),
+    path('api/', include('api.urls')),
+
 
 ]
 
