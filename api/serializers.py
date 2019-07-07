@@ -4,6 +4,7 @@ from sermons.models import Sermons
 
 
 class EventSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Event
         fields = ('id', 'name', 'date', 'short_description',
@@ -11,6 +12,7 @@ class EventSerializer(serializers.ModelSerializer):
 
 
 class SermonSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Sermons
         fields = ('id', 'title', 'date', 'description', 'file')

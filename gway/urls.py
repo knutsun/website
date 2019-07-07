@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from api.router import router
 
 urlpatterns = [
 
@@ -14,7 +15,7 @@ urlpatterns = [
                       template_name='location/index.html'), name='location'),
     path('contact/', include('contact.urls')),
     path('events/', include('events.urls')),
-    path('api/', include('api.urls')),
+    path('api/', include(router.urls)),
 
 ]
 
