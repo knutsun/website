@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from events.models import Event
 
+
 def index(request):
 
     all_events = Event.objects.all()
@@ -12,5 +13,5 @@ def index(request):
         'event_count': event_count,
         'three_events': three_events,
     }
-    
+
     return render(request, 'index.html', context)

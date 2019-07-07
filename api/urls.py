@@ -1,9 +1,9 @@
-from django.urls import path, include
-from .views import SermonApiView, SermonDetailApiView, EventApiView, EventDetailApiView
+from .views import EventApiView, EventDetailApiView, SermonApiView, SermonDetailApiView
+from django.urls import path
 
 urlpatterns = [
 
-	# Sermon endpoints
+    # Sermon endpoints
     path('sermons', SermonApiView.as_view()),
     path('sermons/<int:pk>/', SermonDetailApiView.as_view()),
 

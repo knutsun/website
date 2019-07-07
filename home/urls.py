@@ -1,9 +1,9 @@
-from django.urls import path, include
 from . import views
+from django.urls import path
 
 app_name = 'home'
 
 urlpatterns = [
-	# /events/
+    # /events/
     path('', views.index, name='index'),
 ]

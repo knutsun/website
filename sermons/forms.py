@@ -1,9 +1,8 @@
-from django import forms
-from . import models
-from django.forms import ModelForm
 from .models import Sermons
+from django.forms import ModelForm
+
 
 class SermonForm(ModelForm):
-	class Meta:
-		model = Sermons
-		fields = ['title', 'date', 'description', 'file']
+    class Meta:
+        model = Sermons
+        fields = ['title', 'date', 'description', 'file']
