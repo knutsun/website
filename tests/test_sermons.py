@@ -19,7 +19,7 @@ class TestHome(TestCase):
     def test_can_create_sermon(self):
         description = 'Sunday\'s Sermon'
         data = {
-            'title': 'Test',
+            'title': 'Sermon Title',
             'date': datetime.date(2019, 2, 1),
             'description': description,
             'file': MagicMock(spec=File)
@@ -28,7 +28,9 @@ class TestHome(TestCase):
         post_response = self.client.post('/api/sermons/', data=data)
         self.assertEqual(post_response.status_code, 201)
         self.assertIn(description, post_response.content.decode())
+        self.assertIn('2019-02-01', post_response.content.decode())
 
         sermons_response = self.client.get('/api/sermons/')
         self.assertContains(sermons_response, description)
+        self.assertContains(sermons_response, '2019-02-01')
 
