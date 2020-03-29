@@ -1,5 +1,5 @@
 # Website for Gateway Baptist Church
-## Backend built using Django 
+## Backend built using Django on Python 3.8.2
 
 
 ## Guide to set up the development environment on a Mac OS
