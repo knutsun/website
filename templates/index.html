@@ -3,6 +3,7 @@
 	{% block header %}
 	{% load static %}
 	<link href="{% static 'css/index-style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index-events.css' %}" rel="stylesheet">
 	{% endblock %}
 
 
@@ -58,31 +59,26 @@
 	        </div>
 	    </section>
 
-			<!-- Section B --->
+	<!-- Section B --->
 	<h1>Upcoming events</h1>
 	<section id="section-b" class="grid">
 		<ul>
 			{% for event in three_events %}
 			<li>
-				<div class="card">
-					<div class="card-content">
-						<div class="card-title"><h3>{{ event.name }}</h3></div>
-						<div class="date-card">
-							<div class="month">
-								{{ event.date|date:'F' }}
-							</div>
-							<div class="day">
-								{{ event.date.day }}
-							</div>
-						</div>
-						<div class="card-time">
-							{{ event.start_time }} – {{ event.end_time }}
-						</div>
-							<p>{{ event.short_description }}</p>
-							<button class="btn"><a href="{% url 'events:detail' event.date.year event.date.month event.date.day event.pk %}">
-								View Details</a></button>
-						</div>
-				</div>
+                <div id="test_grid">
+                    <div id="header">
+<a href="{% url 'events:detail' event.date.year event.date.month event.date.day event.pk %}">
+                                {{ event.name }}</a></button>
+                    </div>
+                    <div id="date-card">
+                    <div class="month">
+                        {{ event.date|date:'F' }}
+                    </div>
+                    <div class="day">
+                        {{ event.date.day }}
+                    </div>
+                </div>
+            </div>
 			</li>
 			{% endfor %}
       </ul>
