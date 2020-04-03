@@ -15,9 +15,9 @@ def subscribe(request):
         message = 'Hello! Welcome to Gateway Baptist Church! \
         We are happy to have you as a subscriber.'
 
-        recepient = str(sub['Email'].value())
+        recipient = str(sub['Email'].value())
 
-        send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently=False)
+        send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
 
-        return render(request, 'subscribe/success.html', {'recepient': recepient})
+        return render(request, 'subscribe/success.html', {'recipient': recipient})
     return render(request, 'subscribe/index.html', {'form': sub})
