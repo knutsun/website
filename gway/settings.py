@@ -22,14 +22,14 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     MEDIA_URL = '/media/'
     ADMINS = [('Chaz', 'csselph@gmail.com')]
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gway',
-        'USER': 'postgres',
-        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'gway',
+            'USER': 'postgres',
+            'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
     }
 
 else:
@@ -46,14 +46,14 @@ else:
     PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
     STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gway',
-        'USER': 'postgres',
-        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'gway',
+            'USER': 'postgres',
+            'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
     }
 
 
@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'events',
     'home',
     'api',
+    'subscribe',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,8 +123,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gway.wsgi.application'
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -142,24 +141,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'US/Eastern'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -167,5 +159,13 @@ STATIC_URL = '/static/'
 #   os.path.join(BASE_DIR, 'static/'),
 # )
 
-LOGIN_REDIRECT_URL = 'home:index' #alternatively, can use '/'
+LOGIN_REDIRECT_URL = 'home:index'  # alternatively, can use '/'
 LOGOUT_REDIRECT_URL = 'home:index'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'csselph@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ['GMAIL_PASSWORD']

@@ -16,6 +16,7 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('events/', include('events.urls')),
     path('api/', include(router.urls)),
+    path('subscribe/', include('subscribe.urls')),
 
 ]
 
