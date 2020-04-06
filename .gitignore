@@ -3,6 +3,8 @@ setup_server.txt
 media/
 location/config.js
 cert.txt
+geckodriver.log
+
 *.log
 *.pot
 *.pyc
