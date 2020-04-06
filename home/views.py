@@ -6,7 +6,7 @@ def index(request):
 
     all_events = Event.objects.all()
     event_count = all_events.count()
-    three_events = all_events.order_by('date')[:3]
+    three_events = all_events.order_by('-date')[:3]
 
     context = {
         'all_events': all_events,

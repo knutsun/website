@@ -108,18 +108,18 @@ p {
 }
 
 #section-b li {
-  margin-top: 1em;
-  margin-left: .5em;
-  margin-right: .5em;
+  /*margin-top: 1em;*/
+  /*margin-left: .5em;*/
+  /*margin-right: .5em;*/
   margin-bottom: 1em;
   padding: 0;
   background: #fff;
   color: #333;
   border-radius: 20px;
   overflow: hidden;
-  border: 7px solid #195E8B;
+  /*border: 7px solid #195E8B;*/
 }
-.card {
+/*.card {
   display: grid;
   grid-template-rows: 20% 20% 20% 20% 20%;
   background-color: white;
@@ -132,15 +132,15 @@ p {
   padding-left: .1em;
   padding-right: .1em;
   /* background-color: #02273F; */
-  margin-bottom: 2em;
+  /*margin-bottom: 2em;*/
   /* border-radius: 25px; */
-  color: #042752;
-}
-.card-time {
-  font-size: 22px;
-  margin-top: 1em;
-}
-.date-card {
+  /*color: #042752;*/
+/*}*/
+/*.card-time {*/
+  /*font-size: 22px;*/
+  /*margin-top: 1em;*/
+/*}*/
+/*.date-card {
   grid-row: 2;
   text-align: center;
   margin: 0% 35% 0% 35%;
@@ -160,7 +160,7 @@ p {
   color: #0D4970;
   padding-top: .5rem;
   padding-bottom: .5rem;
-}
+}*/
 #section-c {
   background: #4DC58B;
   color: #FFF;
@@ -236,10 +236,10 @@ p {
     display: grid;
     grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   }
-  .date-card {
+/*  .date-card {
     margin: 0% 30% 0% 30%;
   }
-
+*/
 
   #section-a table{
     padding-top: 0;
@@ -262,8 +262,8 @@ p {
     justify-content: space-around;
   }
 
-  #section-b li {
+/*  #section-b li {
     width: 31%;
     border: 6px solid #195E8B;
-  }
+  }*/
 }
