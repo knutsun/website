@@ -1,0 +1,166 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+/**************
+Footer
+**************/
+
+footer {
+    padding: 2.5% 2.5%;
+    background-color: darkslategrey;
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+
+}
+
+footer li, footer a {
+    list-style-type: none;
+    padding: 5.5px;
+    color:  aliceblue;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer h3{
+    color: skyblue;
+    margin: 0px;
+}
+
+footer ul{
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+.logoPlaced, .navigation {
+    display: none;
+}
+
+footer p{
+    background-color: lightslategrey;
+}
+
+footer p a{
+    padding: 0px;
+    margin: 0px;
+}
+/* styling to the facebook logo, maybe to re-add
+a.fa { 
+    padding: 4px 5px 4px 5px ;
+    background-color: black;
+    color: aliceblue;
+}*/
+
+/***********
+Logo placeholder
+***********/
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 600px) {
+footer{
+background-color: orange;
+}
+
+.logoPlaced{
+    display:contents;
+}
+
+.logoPlaced img{
+    width: 12%;
+    float: left;
+}
+    
+.logoText{
+    float: left;
+    width: 33%;
+    font-size: .8em;
+    text-align: left;
+
+ }
+
+.services, .contactUs{
+    float: left;
+    width: 26%; 
+    text-align: left
+}
+
+footer p{
+    clear: both;
+}
+    
+    footer a, footer li{
+        padding: 10px 0px;
+    }
+    
+    /*work on to add seperation
+    footer .services { 
+        border-right: solid black 1px; 
+    }*/
+    
+    footer .services, footer .contactUs{
+        padding: 0% .5%;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+footer{
+    background-color: darkslategrey;
+    }    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+footer{
+    background-color: red;
+} 
+    
+
+
+
+
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+footer{
+    background-color: green;
+    } 
+    
+    footer .navigation
+    {
+        display: contents;
+        text-align: left;
+        float: left;
+    }
+    
+    .services, .contactUs, footer .navigation{
+        width: 20%;
+    }
+    
+    footer .navigation h3, footer .navigation li {
+        margin: 0px;
+        overflow: none;
+    }
+
+    .logoPlaced img{
+        width: 9em;
+    }
+    
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+footer{
+    background-color: darkslategrey;
+    } 
+}
