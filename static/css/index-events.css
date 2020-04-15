@@ -78,6 +78,18 @@ div #header a:hover {
 
 
 
+@media only screen and (max-width: 777px){
+
+    #date-card{
+        margin: auto;
+    }
+
+    #test_grid {
+        width: auto;
+    }
+
+}
+
 
 
 

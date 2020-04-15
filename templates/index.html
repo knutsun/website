@@ -67,8 +67,13 @@
 			<li>
                 <div id="test_grid">
                     <div id="header">
-<a href="{% url 'events:detail' event.date.year event.date.month event.date.day event.pk %}">
-                                {{ event.name }}</a></button>
+                        <a href="{% url 'events:detail'
+                                            event.date.year
+                                            event.date.month
+                                            event.date.day
+                                            event.pk %}">
+                                            {{ event.name }}
+                        </a>
                     </div>
                     <div id="date-card">
                     <div class="month">
@@ -115,31 +120,8 @@
       </div>
     </section>
 
-		<section id="section-e" class="grid">
-			<div class="content-wrap">
-				<h2 class="content-title"><a id="contact-link" href="{% url 'contact:index' %}"> Contact Us</a></h2>
-				<div class="w3-col m4 images-class"></div>
-				<div class="w3-col m4 images-class"></div>
-				<div class="w3-col m4 images-class"></div>
-				<!-- <div class="w3-col m4 images-class"></div>
-				<div class="w3-col m4 images-class"></div> -->
-			</div>
-		</section>
-
   </main>
 
-  <!-- Footer -->
-  <!--<footer id="main-footer" class="grid">
-    <div>
-      <address>
-        Visit us at:<br>
-        17825 Valdosta Hwy, Valdosta, GA 31602
-      </address>
-    </div>
-    <div>(229) 241-8844</div><br>
-
-    <div>Contact <a href="" target="_blank">webmaster</a></div>
-  </footer>-->
 
 
 {% endblock %}
