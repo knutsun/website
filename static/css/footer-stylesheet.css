@@ -1,52 +1,67 @@
-body{
-    font-family: Arial;
-    margin: 0;
-}
 
 /**************
 Footer
 **************/
 
 footer {
-    padding: 2.5% 2.5%;
     background-color: darkslategrey;
     text-align: center;
-    padding: 20px 0px 0px 0px;
-
-}
-
-footer li, footer a {
-    list-style-type: none;
-    padding: 5.5px;
     color:  aliceblue;
 }
 
-footer a{
+/*controls the width of the footer*/
+.footerContent{
+    padding: 1% 7%;
+}
+
+footer li, footer a {/*Styling for footer menu items, margin added to reduce risk of incorrect selections*/
+    list-style-type: none;
+    padding: .5em 0em;
+    margin: .2em 0em;
+    color:  aliceblue;
     text-decoration: none;
 }
 
 footer h3{
     color: skyblue;
-    margin: 0px;
+    margin: 0;
 }
 
-footer ul{
-    padding: 0px;
-    margin: 10px 0px;
+footer .lowerFooter{
+    background-color: lightslategrey;
+    overflow: auto;
 }
 
-.logoPlaced, .navigation {
+.lowerFooter i{
+    margin: 0;
+    padding: 1em;
+	
+}
+
+.logoPlaced, .footerNav {
     display: none;
 }
 
-footer p{
-    background-color: lightslategrey;
+a.fa.fa-facebook-official{
+    margin: 0;
+    padding: .2em;
 }
 
-footer p a{
-    padding: 0px;
-    margin: 0px;
+.footerMain{
+    padding: 1em 0;
 }
+
+.rightAlign{
+    float: right;
+		width: 45%;
+}
+
+.leftAlign{
+    float: left;
+}
+
+
+
 /* styling to the facebook logo, maybe to re-add
 a.fa { 
     padding: 4px 5px 4px 5px ;
@@ -62,51 +77,20 @@ Logo placeholder
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 600px) {
-footer{
-background-color: orange;
-}
 
-.logoPlaced{
-    display:contents;
-}
-
-.logoPlaced img{
-    width: 12%;
-    float: left;
-}
-    
-.logoText{
-    float: left;
-    width: 33%;
-    font-size: .8em;
-    text-align: left;
-
- }
-
-.services, .contactUs{
-    float: left;
-    width: 26%; 
-    text-align: left
-}
-
-footer p{
+footer .lowerFooter{
     clear: both;
 }
-    
-    footer a, footer li{
-        padding: 10px 0px;
-    }
-    
-    /*work on to add seperation
-    footer .services { 
-        border-right: solid black 1px; 
-    }*/
-    
-    footer .services, footer .contactUs{
-        padding: 0% .5%;
-    }
 
+.footerMain{
+    float: left;
+    margin: 1em 1em;
+    /*text-align: left;*/
+    width: 43.5%;
+    padding: 0; 
 }
+    
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
@@ -117,50 +101,51 @@ footer{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-footer{
-    background-color: red;
-} 
+  
+ .logoPlaced img{
+    width: 8em;
+    float: left;
+}
+
+.logoText{
+    float: left;
+    font-size: .8em;
+    text-align: left;
+    width: 25%;
+ }
     
+.logoPlaced{
+    display: block;
+}
 
-
-
-
+.footerMain{
+    width: 22.5%;
+    text-align: left;
+}
 
 
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-footer{
-    background-color: green;
-    } 
     
-    footer .navigation
-    {
-        display: contents;
-        text-align: left;
-        float: left;
-    }
-    
-    .services, .contactUs, footer .navigation{
-        width: 20%;
-    }
-    
-    footer .navigation h3, footer .navigation li {
-        margin: 0px;
-        overflow: none;
-    }
+footer .footerNav{
+    display: block;    
+}
 
-    .logoPlaced img{
-        width: 9em;
-    }
-    
+.footerMain{
+    width: 15%;    
+}
+  
     
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-footer{
-    background-color: darkslategrey;
-    } 
+
+    
+    .footerMain{
+        width: 17%;
+    }
+    
 }
