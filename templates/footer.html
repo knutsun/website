@@ -12,7 +12,10 @@
 
 <footer>
     <div class="logoPlaced">
-        <img src="static\img\Logo.png">
+        {% load static %}
+        <img src="{% static 'img/Logo.png' %}">
+
+        <!-- <img src="static/img/Logo.png"> -->
         <div class="logoText" >
             <h2>GATE<span style="color:#cfa7e8">WAY</span><br> BAPTIST CHURCH</h2>
             <h4 style="clear: left; margin: 5px;">17825 Valdosta Hwy, Valdosta, GA 31602</h4>
