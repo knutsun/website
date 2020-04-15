@@ -1,34 +1,25 @@
-<!-- {% extends 'base.html' %} -->
-<h2>test</h2>
-{% block header %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
 
-	{% load static %}
-		<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/location/style-index.css' %}"/> -->
 
-	<style type="text/css">
+    <style type="text/css">
 
         #map {
-            height: 500px;
-            width: 60%;
-            margin-left: auto;
-            margin-top: 5%;
-            margin-right: auto;
-            margin-bottom: 10%;
+            height: 400px;
+            width: 100%;
         }
 
 
     </style>
-{% endblock %}
 
 
-{% block body %}
+</head>
 <body>
 
 
-    <h1 style="
-    	text-align: center;
-    	margin-top: 10%;
-    ">Visit Us!</h1>
+    <h1>Google Map</h1>
 
 
     <div id="map">
@@ -72,7 +63,4 @@
 
 
 </body>
-
-{% endblock %}
-
-
+</html>
