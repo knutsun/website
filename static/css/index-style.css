@@ -1,29 +1,37 @@
-.images-class {
-  background-image:url('../img/jack.jpg');
-  background-size: cover;
-}
+
 body {
+
   margin: 0;
   background: #333;
   color: #fff;
   line-height: 1.5;
   text-align: center;
+
+  /* This padding is necessary */
   padding-top: 56px;
 }
+
 img {
+
   display: block;
   width: 100%;
   height: auto;
 }
+
 h1, h2, h3 {
+
   margin: 0;
   padding: 1em 0;
 }
+
 p {
+
   margin: 0;
   padding: 1em 0;
 }
+
 .btn {
+
   display: inline-block;
   margin: .5em 0 2em 0;
   background: #195E8B;
@@ -32,55 +40,72 @@ p {
   padding: 1em 2em;
   border: 1px solid #666;
 }
+
 .btn a {
   text-decoration: none;
   color: white;
 }
+
 .btn a:hover {
   color: black;
 }
+
 .btn-1 {
-  background: #333;
+
   display: inline-block;
   margin: .5em 0;
-  /* background: #0D4970; */
-  color: #fff;
+  background: #d1d1e3;
+  color: darkslategrey;
   text-decoration: none;
   padding: 1em 2em;
-  border: 1px solid #666;
+  margin-top: 3em;
+  font-size: 20px;
+  border: 3px solid #666;
 }
+
 .btn:hover {
+
   background: #eaeaea;
   color: white;
 }
+
 .btn-1:hover {
+
   background: #eaeaea;
   color: #333;
 }
 
 /* Header Showcase */
+#bg-image-header {
+
+  font-size: 50px;
+}
 
 #showcase{
-  min-height: 450px;
+
+  min-height: 600px;
   color: #fff;
   text-align: center;
 }
 
 #showcase .bg-image {
+
   position: absolute;
   background: #333 url('../img/church.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 450px;
+  height: 600px;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.5;
 }
+
 #showcase h1 {
-  padding-top: 100px;
+  padding-top: 200px;
   padding-bottom: 0;
 }
+
 
 #showcase .content-wrap,
 #section-a .content-wrap  {
@@ -108,59 +133,15 @@ p {
 }
 
 #section-b li {
-  /*margin-top: 1em;*/
-  /*margin-left: .5em;*/
-  /*margin-right: .5em;*/
+
   margin-bottom: 1em;
   padding: 0;
   background: #fff;
   color: #333;
   border-radius: 20px;
   overflow: hidden;
-  /*border: 7px solid #195E8B;*/
 }
-/*.card {
-  display: grid;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  background-color: white;
-}
-.card-content {
-  padding: 0;
-}
-.card-title {
-  grid-row: 1;
-  padding-left: .1em;
-  padding-right: .1em;
-  /* background-color: #02273F; */
-  /*margin-bottom: 2em;*/
-  /* border-radius: 25px; */
-  /*color: #042752;*/
-/*}*/
-/*.card-time {*/
-  /*font-size: 22px;*/
-  /*margin-top: 1em;*/
-/*}*/
-/*.date-card {
-  grid-row: 2;
-  text-align: center;
-  margin: 0% 35% 0% 35%;
-}
-.month {
-  display: block;
-  background-color: #0D4970;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: .3rem;
-}
-.day {
-  display: block;
-  font-size: 1.4rem;
-  border: 4px solid;
-  color: #0D4970;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}*/
+
 #section-c {
   background: #4DC58B;
   color: #FFF;
@@ -173,17 +154,20 @@ p {
 }
 
 #section-d .box:first-child {
+
   background: #FFF;
   color: black;
 }
 
 #section-e {
+
   background: #6d0f84;
   color: #fff;
   padding: 2em;
 }
 
 #main-footer {
+
   padding: 2em;
   background: #000;
   color: #fff;
@@ -191,16 +175,19 @@ p {
 }
 
 #main-footer a {
+
   color: #2690d4;
   text-decoration: none;
 }
 
 #contact-link {
+
   color: white;
   text-decoration: none;
 }
 
 .content-service-wrapper {
+
   display: grid;
   grid-template-columns: 1fr;
   padding: 0;
@@ -208,17 +195,19 @@ p {
 }
 
 .content-table {
+
   width: 100%;
   margin: 0% 0% 0% 0%;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  border-radius: 1em;
+  border-radius: 5px;
   overflow: hidden;
   box-shadow: 5px 10px 18px #888888;
   background-color: white;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 .content-table th {
+
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: #357096;
@@ -227,6 +216,7 @@ p {
   padding: 8px;
 }
 .content-table td {
+
   padding: 8px;
   font-size: 18px;
 }
@@ -236,10 +226,6 @@ p {
     display: grid;
     grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
   }
-/*  .date-card {
-    margin: 0% 30% 0% 30%;
-  }
-*/
 
   #section-a table{
     padding-top: 0;
@@ -262,8 +248,37 @@ p {
     justify-content: space-around;
   }
 
-/*  #section-b li {
-    width: 31%;
-    border: 6px solid #195E8B;
-  }*/
+  #showcase {
+
+    min-height: 750px;
+    color: #fff;
+    text-align: center;
+  }
+
+  #showcase .bg-image {
+
+    position: absolute;
+    background: #333 url('../img/church.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 750px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+  .content-table {
+
+    width: 100%;
+    margin: 0% 0% 0% 0%;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 5px 10px 18px #888888;
+    background-color: white;
+    /*border: 1px solid black;*/
+  }
+
 }
