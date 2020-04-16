@@ -4,6 +4,7 @@
 	{% load static %}
 	<link href="{% static 'css/index-style.css' %}" rel="stylesheet">
     <link href="{% static 'css/index-events.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	{% endblock %}
 
 
@@ -61,7 +62,7 @@
 	    </section>
 
 	<!-- Section B --->
-	<h1>Upcoming events</h1>
+	<h1 class="content-title">Upcoming events</h1>
 	<section id="section-b" class="grid">
 		<ul>
 			{% for event in three_events %}
