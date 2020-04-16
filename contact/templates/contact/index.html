@@ -8,55 +8,60 @@
 
 {% block body %}
 
-<div class="header-wrapper">
-	<h2 class="header">Contact Us</h2>
 
-	<p class="subheader">Use the form below to contact us.</p>
-</div>
+	<div id="contact_form_wrapper">
 
 
-	{% if messages %}
-		<ul>
-			{% for message in messages %}
-				<div class="alert alert-primary messages" role="alert">
-					<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-				</div>
-			{% endfor %}
-		</ul>
-	{% endif %}
+		<h2 id="contact_form_header">Contact Form</h2>
+		<p id="contact_form_description">
+			We would love to hear from you! We welcome any inquiries, questions, or comments.
+			Reach out if you're interested in <br/>joining our church, or have questions about a
+			sacrament such as a baptism, wedding, or funeral. Fill out the contact <br/>form below
+			and we will return your inquiry as soon as we can.
+		</p>
+
+			{% if messages %}
+				<ul>
+					{% for message in messages %}
+						<div class="alert alert-primary messages" role="alert">
+							<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+						</div>
+					{% endfor %}
+				</ul>
+			{% endif %}
 
 
-	<div>
-		<form class="" action="" method="post" enctype="multipart/form-data">
-			{% csrf_token %}
+			<div>
+				<form class="" action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
 
-			<div class="subject-wrapper">
-				<label id="subject-label" for="">Subject</label>
-					<input type="text" placeholder="Enter subject" id="subject" name="subject" value="{{ subject }}">
+					<div class="subject-wrapper">
+						<label id="subject-label" for="">Subject</label>
+							<input type="text" placeholder="Enter subject" id="subject" name="subject" value="{{ subject }}">
+					</div>
+
+					<div class="name-wrapper">
+						<label id="name-label" for="">Name</label>
+							<input type="text" placeholder="Enter your name" id="name" name="name" value="{{ name }}">
+					</div>
+
+					<div class="email-wrapper">
+						<label for="">Email address</label>
+							<input type="text" placeholder="Enter your email" id="email" name="email" value="{{ email }}">
+					</div>
+
+					<div class="message-wrapper">
+							<label for="">Message</label>
+							<textarea name="body" id="message" placeholder="Enter your message" value="{{ body }}" rows="11" required></textarea>
+					</div>
+
+					<button class="btn btn-primary" id="submit" type="submit">Submit</button>
+
+					</form>
 			</div>
+		</div>
 
-			<div class="name-wrapper">
-				<label id="name-label" for="">Name</label>
-					<input type="text" placeholder="Enter your name" id="name" name="name" value="{{ name }}">
-			</div>
-
-			<div class="email-wrapper">
-				<label for="">Email address</label>
-					<input type="text" placeholder="Enter your email" id="email" name="email" value="{{ email }}">
-			</div>
-
-			<div class="message-wrapper">
-					<label for="">Message</label>
-					<textarea name="body" id="message" placeholder="Enter your message" value="{{ body }}" rows="11" required></textarea>
-			</div>
-
-			<button class="btn btn-primary" id="submit" type="submit">Submit</button>
-
-			</form>
-	</div>
-
-
-
+<!-- </div> -->
 
 
 {% endblock %}

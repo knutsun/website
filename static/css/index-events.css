@@ -1,0 +1,95 @@
+#test_grid {
+
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: 1fr;
+    border: 5px solid #0D4970;
+    border-radius: 15px;
+    width: 250px;
+    height: 350px;
+
+}
+
+div #header {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /*border-bottom: 2px solid black;*/
+    padding-bottom: 3px;
+    margin: 0px;
+    font-size: 35px;
+    text-align: center;
+    color: #0D4970;
+}
+
+div #header a {
+    text-decoration: none;
+    color: #0D4970;
+}
+
+
+div #header a:hover {
+    text-decoration: none;
+    color: #4b73b3;
+}
+
+
+#date-card {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 8;
+    border-radius: 7px;
+    text-align: center;
+    width: 175px;
+    margin-left: 40px;
+    background-color: #0D4970;
+}
+
+.month {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: -1;
+    grid-row-end: -3;
+    font-size: 35px;
+    text-align: center;
+    /*border-bottom: 5px solid blue;*/
+    margin: auto;
+    color: white;
+    padding: 5px;
+}
+
+.day {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: -1;
+    grid-row-end: 9;
+    border: 2px solid #0D4970;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-size: 40px;
+    background-color: white;
+    padding-top: 12px;
+}
+
+
+
+@media only screen and (max-width: 777px){
+
+    #date-card{
+        margin: auto;
+    }
+
+    #test_grid {
+        width: auto;
+    }
+
+}
+
+
+
+
