@@ -1,5 +1,5 @@
 {% load static %}
-<link href="{% static 'css/nav-style.css' %}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav-style.css' %}">
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top back">
     <a class="navbar-brand" href="{% url 'home:index' %}">Gateway Baptist</a>
@@ -26,8 +26,19 @@
       </ul>
       {% if user.is_authenticated %}
         <ul class="nav navbar-nav navbar-right ml-auto">
-          <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">{{ user.username }}</a>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            {{ user.username }}
+            </a>
             <ul class="dropdown-menu" style="right: 0; left:auto;">
+              <li><a href="{% url 'admin:index' %}">Dashboard</a></li>
+              <hr>
+              <li><a href="{% url 'admin:sermons_sermons_add' %}">Add Sermon</a></li>
+              <hr>
+              <li><a href="{% url 'admin:events_event_add' %}">Add Event</a></li>
+              <hr>
+              <li><a href="{% url 'admin:contact_contact_changelist' %}">View Contacts</a></li>
+              <hr>
               <li><a href="{% url 'logout' %}">Log out</a></li>
             </ul>
           </li>

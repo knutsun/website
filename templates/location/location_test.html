@@ -1,25 +1,32 @@
-<!-- {% extends 'base.html' %} -->
-<h2>test</h2>
-{% block header %}
-
-	{% load static %}
-		<link rel="stylesheet" type="text/css" href="{% static 'css/location/style-index.css' %}"/>
-
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
 
 
-{% block body %}
+    <style type="text/css">
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+
+    </style>
+
+
+</head>
 <body>
 
 
-    <h1>Visit Us!</h1>
+    <h1>Google Map</h1>
 
 
     <div id="map">
     </div>
 
     <script type="text/javascript">
-        {% load static %}
+
         function initMap(){
 
             // map options
@@ -35,15 +42,15 @@
             var marker = new google.maps.Marker({
                 position: {lat: 30.865410, lng: -83.383724},
                 map: map,
-                icon: "{% static 'img/church.svg' %}"
+                icon: 'church.svg'
             });
 
 
             var infoWindow = new google.maps.InfoWindow({
-                content: '<a href="https://www.google.com/maps/dir/?api=1&destination=Gateway+Baptist+Church,+17825+Valdosta+Hwy,+Valdosta,+GA+31602&travelmode=driving"><h2> Gateway Baptist Church </h2> <p>17825 Valdosta Hwy, Valdosta, GA 31602</p></a>'
+                content: '<h2> Gateway Baptist Church </h2>'
             });
 
-            marker.addListener('click', function(){
+            marker.addListener('mouseover', function(){
                 infoWindow.open(map, marker);
             });
 
@@ -56,7 +63,4 @@
 
 
 </body>
-
-{% endblock %}
-
-
+</html>

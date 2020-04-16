@@ -6,34 +6,42 @@ import time
 with webdriver.Firefox() as driver:
 
     wait = WebDriverWait(driver, 10)
+
+    # Navigate to the Contact form
     driver.get("http://localhost:8000/contact")
 
-    navbar = driver.find_element_by_class_name('navbar')
+    # Enter form information to submit
+    subject = 'Prayer Request'
+    name = 'Chaz'
+    email = 'csselph@gmail.com'
+    message = 'Please Lord, help our friend Brian.'
 
-    subject = driver.find_element_by_name('subject')
-    name = driver.find_element_by_name('name')
-    email = driver.find_element_by_name('email')
-    message = driver.find_element_by_name('body')
-    submit_button = driver.find_element_by_id('submit')
-
-    subject.send_keys('Prayer Request')
-    time.sleep(1)
-
-    name.send_keys('Chaz')
-    time.sleep(1)
-
-    email.send_keys('csselph@gmail.com')
-    time.sleep(1)
-
-    message.send_keys('Please Lord, help our friend Brian during this trying time.')
-    time.sleep(1)
-
-    submit_button.click()
-
-    time.sleep(5)
-
+    driver.find_element_by_name('subject').send_keys(subject)
+    driver.find_element_by_name('name').send_keys(name)
+    driver.find_element_by_name('email').send_keys(email)
+    driver.find_element_by_name('body').send_keys(message)
+    driver.find_element_by_css_selector("button[type='submit']").click()
     alert_message = driver.find_element_by_xpath("//div[@class='alert alert-primary messages']")
 
-    time.sleep(2)
+    # Login to Admin Dashboard to delete new submission
+    driver.get("http://localhost:8000/admin")
+    driver.find_element_by_name('username').send_keys('chaz')
+    driver.find_element_by_name('password').send_keys('123god1;')
+    driver.find_element_by_css_selector("input[type='submit']").click()
+
+    # Navigate to the Contacts section of Admin Dashboard
+    driver.find_element_by_link_text('Contacts').click()
+    driver.find_element_by_xpath("//tr[@class='row1']/td[@class='action-checkbox']/input[@name='_selected_action']").click()
+    driver.find_element_by_xpath("//div[@class='actions']/label/select[@name='action']").click()
+    driver.find_element_by_xpath("//div[@class='actions']/label/select[@name='action']/option[@value='delete_selected']").click()
+    driver.find_element_by_xpath("//div[@class='actions']/button[@type='submit']").click()
+
+    # Delete the new submission
+    driver.find_element_by_xpath("//input[@type='submit']").click()
+
+    # Assert the submission was deleted
+    driver.find_element_by_xpath("//ul[@class='messagelist']/li[@class='success']")
+    time.sleep(3)
+
     print("Test succeeded")
     driver.quit()

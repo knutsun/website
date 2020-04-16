@@ -1,6 +1,22 @@
-.env
 environment_vars_setup.txt
 setup_server.txt
 media/
 location/config.js
 cert.txt
+geckodriver.log
+
+*.log
+*.pot
+*.pyc
+__pycache__
+.DS_Store
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+newenv/

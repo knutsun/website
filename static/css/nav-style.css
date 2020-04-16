@@ -1,5 +1,31 @@
 .back{
   background-color: #0D4970;
-  font-size: 1.1em;
+  font-size: 1.25em;
   text-align: center;
+}
+
+
+a.nav-link.dropdown-toggle::after {
+    content: none;
+}
+
+.dropdown-menu li {
+    text-align: center;
+}
+
+.navbar {
+    padding: 1rem 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    border: 4px solid #0244ad;
+    border-radius: 15px;
 }
