@@ -1,4 +1,7 @@
-
+body{
+    position: relative;
+    min-height: 100v	
+}
 /**************
 Footer
 **************/
@@ -7,17 +10,24 @@ footer {
     background-color: darkslategrey;
     text-align: center;
     color:  aliceblue;
+	 position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+    border-top: solid black .1em;
 }
 
 /*controls the width of the footer*/
 .footerContent{
-    padding: 1% 7%;
+    overflow: hidden;
+	padding: .5em 1em;
+
 }
 
 footer li, footer a {/*Styling for footer menu items, margin added to reduce risk of incorrect selections*/
     list-style-type: none;
-    padding: .5em 0em;
-    margin: .2em 0em;
+    padding: .2em 0em;
+    margin: .5em 0 0 0;
     color:  aliceblue;
     text-decoration: none;
 }
@@ -25,20 +35,20 @@ footer li, footer a {/*Styling for footer menu items, margin added to reduce ris
 footer h3{
     color: skyblue;
     margin: 0;
+	padding: 0 0 .5em 0;
+	font-size: 1.5em;
 }
 
 footer .lowerFooter{
-    background-color: lightslategrey;
-    overflow: auto;
+    background-color: #404040;
+    overflow: hidden;
 }
 
 .lowerFooter i{
-    margin: 0;
-    padding: 1em;
-	
+    padding: .5em;;
 }
 
-.logoPlaced, .footerNav {
+.logoPlaced {
     display: none;
 }
 
@@ -53,21 +63,16 @@ a.fa.fa-facebook-official{
 
 .rightAlign{
     float: right;
-		width: 45%;
 }
 
 .leftAlign{
     float: left;
 }
 
-
-
-/* styling to the facebook logo, maybe to re-add
-a.fa { 
-    padding: 4px 5px 4px 5px ;
-    background-color: black;
-    color: aliceblue;
-}*/
+.contactUs a{
+	padding: 0;
+	margin: 0;
+}
 
 /***********
 Logo placeholder
@@ -78,74 +83,106 @@ Logo placeholder
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 600px) {
 
+.footerMain{
+    float: left;
+    margin: 1em 1em 0 1em;
+    /*text-align: left;*/
+    width: 44.2%;
+    padding: 0; 
+}
+
 footer .lowerFooter{
     clear: both;
 }
 
-.footerMain{
-    float: left;
-    margin: 1em 1em;
-    /*text-align: left;*/
-    width: 43.5%;
-    padding: 0; 
+.lowerFooter i{
+    padding: 1em;
 }
     
+} 
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
-footer{
-    background-color: darkslategrey;
-    }    
+
+.footerMain{
+	margin: 0;
+}
+
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  
- .logoPlaced img{
+@media only screen and (min-width: 768px) { 
+
+.logoPlaced{
+    display: block; 
+    overflow: hidden;
+    float: left;
+}
+
+
+.logoPlaced img{
     width: 8em;
     float: left;
 }
-
+       
 .logoText{
+    text-align: left;
     float: left;
-    font-size: .8em;
-    text-align: left;
-    width: 25%;
- }
+	width: 60%;
+}
+
+.logoText h2{
+	font-size: 1.5em; 
+}
+
+.logoText h4{
+	font-size: 1em;
+}
     
-.logoPlaced{
-    display: block;
-}
-
-.footerMain{
-    width: 22.5%;
+ .footerMain{
+    width: 15.5%;
     text-align: left;
+    float: right;
+}    
+  
+.lowerFooter i{
+    margin: 0em 2em;
 }
-
-
+    
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    
-footer .footerNav{
-    display: block;    
-}
 
-.footerMain{
-    width: 15%;    
+    
+.footerContent,{
+    width: 90%;
+	margin: 0 auto;
+
 }
-  
+    
+.footerMain {
+    width: 21.2%;
+} 
+    
+    
+.lowerFooter i{
+    margin: 0em 5em;
+}
+    
     
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
     
-    .footerMain{
-        width: 17%;
-    }
+.footerMain {
+    width: 23%;
+} 
+    
+.footerContent{
+}
     
 }
