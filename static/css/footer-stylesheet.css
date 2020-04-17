@@ -1,6 +1,14 @@
-body{
-    position: relative;
-    min-height: 100v	
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contentF { /*Used to put footer on the bottom*/
+  flex: 1 0 auto; 
 }
 /**************
 Footer
@@ -10,18 +18,14 @@ footer {
     background-color: darkslategrey;
     text-align: center;
     color:  aliceblue;
-	 position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: auto;
     border-top: solid black .1em;
+
 }
 
 /*controls the width of the footer*/
 .footerContent{
-    overflow: hidden;
 	padding: .5em 1em;
-
+	flex-shrink: 0;
 }
 
 footer li, footer a {/*Styling for footer menu items, margin added to reduce risk of incorrect selections*/
