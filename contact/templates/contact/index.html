@@ -60,7 +60,7 @@
 							<textarea name="body" id="message" placeholder="Enter your message" value="{{ body }}" rows="11" required></textarea>
 					</div>
 
-					<div class="g-recaptcha" data-sitekey="6LdTruoUAAAAAPWbzcvb4LAdjfG0L73yPHXd6O1Q">
+					<div class="g-recaptcha" data-sitekey="6Lc8_uoUAAAAAGByCBWswV23EmikRpHGyP4vOiBJ">
 
 					</div>
 
@@ -69,7 +69,7 @@
 
 					<script>
 					grecaptcha.ready(function() {
-					    grecaptcha.execute('6LdTruoUAAAAAPWbzcvb4LAdjfG0L73yPHXd6O1Q', {action: 'contact_submission'}).then(function(token) {
+					    grecaptcha.execute('6Lc8_uoUAAAAAGByCBWswV23EmikRpHGyP4vOiBJ', {action: 'homepage'}).then(function(token) {
 					       console.log('it worked')
 					        document.getElementById("form").appendChild(document.CreateElement(
 					        	`<input type="hidden" name="g-recaptcha-response" value=${token}`);

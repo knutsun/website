@@ -46,7 +46,7 @@ class index(FormView):
             # result will be a dict containing 'success' and 'action'.
             # it is important to verify both
 
-            if (not result['success']) or (not result['action'] == 'signup'):  # make sure action matches the one from your template
+            if (not result['success']):  # make sure action matches the one from your template
                 messages.error(self.request, 'Invalid reCAPTCHA. Please try again.')
                 return super().form_invalid(form)
 
