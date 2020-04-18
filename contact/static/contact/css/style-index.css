@@ -35,6 +35,7 @@
 input {
   padding: 2%;
 }
+
 .btn {
   margin: 5% 5% 10% 5%;
   width: 90%;
@@ -42,22 +43,26 @@ input {
 }
 
 
-  #contact_form_wrapper {
-    background-color: white;
-    margin: 25% 5% 5% 5%;
-  }
+#contact_form_wrapper {
+  background-color: white;
+  margin: 25% 5% 5% 5%;
+}
 
-  #contact_form_header {
-    margin-top: 0%;
-    margin-left: 5%;
-    padding-top: 5%;
-    text-decoration: underline;
-  }
+#contact_form_header {
+  margin-top: 0%;
+  margin-left: 5%;
+  padding-top: 5%;
+  text-decoration: underline;
+}
 
-  #contact_form_description {
-    margin-left: 5%;
-    padding-top: 3%;
-  }
+#contact_form_description {
+  margin-left: 5%;
+  padding-top: 3%;
+}
+
+.g-recaptcha {
+  margin-left: 5%;
+}
 
 /*Set display for tablets and desktops*/
 @media only screen and (min-width: 700px) {
@@ -111,6 +116,10 @@ input {
     background-color: #d9d9d9;
   }
 
+  .g-recaptcha {
+    margin-left: 5%;
+  }
+
 }
 @media only screen and (min-width: 1000px) {
   .subject-wrapper {
@@ -133,5 +142,9 @@ input {
     margin: 2% 5% 10% 5%;
     width: 15%;
     padding: 1%;
+  }
+
+  .g-recaptcha {
+    margin-left: 5%;
   }
 }

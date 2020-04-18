@@ -26,7 +26,7 @@ class index(FormView):
 
         if form.is_valid():
 
-        # get the token submitted in the form
+            # get the token submitted in the form
             recaptcha_response = self.request.POST.get('g-recaptcha-response')
             url = 'https://www.google.com/recaptcha/api/siteverify'
             cert_path = certifi.where()
@@ -53,6 +53,6 @@ class index(FormView):
             form.save()
             messages.success(request, "Message successfully sent",
                                       extra_tags="message_success")
-            return render(request, self.success_url)
+            return render(request, self.success_url, {'sitekey': settings.GOOGLE_RECAPTCHA_SITE_KEY})
         else:
-            return render(request, self.template_name, {'form': form})
+            return render(request, self.template_name, {'form': form, 'sitekey': settings.GOOGLE_RECAPTCHA_SITE_KEY})

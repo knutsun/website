@@ -124,7 +124,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'gway.wsgi.application'
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -148,13 +147,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'US/Eastern'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -177,6 +172,3 @@ GOOGLE_RECAPTCHA_SITE_KEY = '6Lc8_uoUAAAAAGByCBWswV23EmikRpHGyP4vOiBJ'
 
 RECAPTCHA_PUBLIC_KEY = '66Lc8_uoUAAAAAGByCBWswV23EmikRpHGyP4vOiBJ'
 RECAPTCHA_PRIVATE_KEY = '6Lc8_uoUAAAAAEEN1UYQakqFr1CcmSN_EJxAfz5u'
-
-
-# SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
