@@ -90,6 +90,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'certifi'
 ]
 
 MIDDLEWARE = [
@@ -169,3 +170,13 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'home:index' #alternatively, can use '/'
 LOGOUT_REDIRECT_URL = 'home:index'
+
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdTruoUAAAAAIxBzmvvW0AGzifoNJwDfqSBHW67'
+GOOGLE_RECAPTCHA_SITE_KEY = '6LdTruoUAAAAAPWbzcvb4LAdjfG0L73yPHXd6O1Q'
+
+RECAPTCHA_PUBLIC_KEY = '6LdTruoUAAAAAPWbzcvb4LAdjfG0L73yPHXd6O1Q'
+RECAPTCHA_PRIVATE_KEY = '6LdTruoUAAAAAIxBzmvvW0AGzifoNJwDfqSBHW67'
+
+
+# SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
