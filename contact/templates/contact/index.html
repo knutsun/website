@@ -3,6 +3,11 @@
 {% block header %}
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/style-index.css' %}">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+	<script src="https://www.google.com/recaptcha/api.js?render={{ sitekey }}"></script>
+
+
 
 {% endblock %}
 
@@ -55,7 +60,23 @@
 							<textarea name="body" id="message" placeholder="Enter your message" value="{{ body }}" rows="11" required></textarea>
 					</div>
 
+					<!-- {{ sitekey }} is not working here, investigate -->
+					<div class="g-recaptcha" data-sitekey="6Lc8_uoUAAAAAGByCBWswV23EmikRpHGyP4vOiBJ">
+
+					</div>
+
 					<button class="btn btn-primary" id="submit" type="submit">Submit</button>
+
+						<script>
+						grecaptcha.ready(function() {
+						    grecaptcha.execute('{{ sitekey }}', {action: 'homepage'}).then(function(token) {
+
+						        document.getElementById("form")
+						        		.appendChild(document.CreateElement(
+						        	`<input type="hidden" name="g-recaptcha-response" value=${token}`);
+						    });
+						});
+						</script>
 
 					</form>
 			</div>
