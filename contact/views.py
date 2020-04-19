@@ -30,7 +30,6 @@ class index(FormView):
             recaptcha_response = self.request.POST.get('g-recaptcha-response')
             url = 'https://www.google.com/recaptcha/api/siteverify'
             cert_path = certifi.where()
-            # response = requests.get(url, verify=cert_path, headers=headers)
 
             payload = {
                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
@@ -43,10 +42,7 @@ class index(FormView):
             response = urllib.request.urlopen(req, cafile=cert_path)
             result = json.loads(response.read().decode())
 
-            # result will be a dict containing 'success' and 'action'.
-            # it is important to verify both
-
-            if (not result['success']):  # make sure action matches the one from your template
+            if (not result['success']):
                 messages.error(self.request, 'Invalid reCAPTCHA. Please try again.')
                 return super().form_invalid(form)
 
