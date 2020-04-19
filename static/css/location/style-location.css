@@ -1,0 +1,42 @@
+/*Set display for mobile*/
+
+
+    #map {
+        height: 500px;
+        width: 80%;
+        margin-left: auto;
+        margin-top: 5%;
+        margin-right: auto;
+        margin-bottom: 10%;
+        padding-bottom: 50%;
+    }
+
+    body h1 {
+    	text-align: center;
+		margin-top: 25%;
+    }
+
+/*Set display for tablets*/
+@media only screen and (min-width: 700px) {
+
+
+    #map {
+        height: 500px;
+        width: 60%;
+        margin-left: auto;
+        margin-top: 2%;
+        margin-right: auto;
+        margin-bottom: 10%;
+        padding-bottom: 50%;
+    }
+
+    body h1 {
+    	text-align: center;
+		margin-top: 7%;
+    }
+
+}
+/*Set display for desktops*/
+@media only screen and (min-width: 1000px) {
+
+}
