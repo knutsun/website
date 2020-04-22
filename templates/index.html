@@ -4,6 +4,7 @@
 	{% load static %}
 	<link href="{% static 'css/index-style.css' %}" rel="stylesheet">
     <link href="{% static 'css/index-events.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	{% endblock %}
 
 
@@ -12,9 +13,10 @@
   <header id="showcase" class="grid">
     <div class="bg-image"></div>
     <div class="content-wrap">
-      <h1>Welcome to Gateway</h1>
-      <p></p>
+      <h1 id="bg-image-header">Welcome to Gateway</h1>
+
       <a href="#section-a" class="btn-1 btn">You're Invited</a>
+
     </div>
   </header>
 
@@ -60,7 +62,7 @@
 	    </section>
 
 	<!-- Section B --->
-	<h1>Upcoming events</h1>
+	<h1 class="content-title">Upcoming events</h1>
 	<section id="section-b" class="grid">
 		<ul>
 			{% for event in three_events %}
@@ -108,7 +110,7 @@
     <!-- Section D --->
     <section id="section-d" class="grid">
       <div class="box">
-        <h2 id="content-title">Listen to Sermons</h2>
+        <h2 class="content-title">Listen to Sermons</h2>
         <p>Visit our <a href="{% url 'sermons:index' %}">Sermon Archive</a> to listen to previous sermons delivered at
 				 Gateway Baptist Church </p>
       </div>
