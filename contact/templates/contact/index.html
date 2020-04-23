@@ -3,7 +3,7 @@
 {% block header %}
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/style-index.css' %}">
-
+	<script src="{% static 'contact/js/contact-script.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block body %}
@@ -31,26 +31,33 @@
 			{% endif %}
 
 
-			<div>
-				<form class="" action="" method="post" enctype="multipart/form-data">
+			<div id="error_message">
+				<form id="myform" onsubmit="return validation();" class="" action="" method="post" enctype="multipart/form-data">
 					{% csrf_token %}
 
-					<div class="subject-wrapper">
+					<div class="subject-wrapper input_field">
 						<label id="subject-label" for="">Subject</label>
 							<input type="text" placeholder="Enter subject" id="subject" name="subject" value="{{ subject }}">
+							<small id="subject_error"></small>
 					</div>
 
-					<div class="name-wrapper">
+					<div class="name-wrapper input_field">
 						<label id="name-label" for="">Name</label>
 							<input type="text" placeholder="Enter your name" id="name" name="name" value="{{ name }}">
+							<small id="name_error"></small>
 					</div>
 
-					<div class="email-wrapper">
+					<div class="email-wrapper input_field">
 						<label for="">Email address</label>
-							<input type="text" placeholder="Enter your email" id="email" name="email" value="{{ email }}">
+							<input type="email"
+									placeholder="Enter your email"
+									id="email"
+									name="email"
+									value="{{ email }}">
+							<small id="email_error"></small>
 					</div>
 
-					<div class="message-wrapper">
+					<div class="message-wrapper input_field">
 							<label for="">Message</label>
 							<textarea name="body" id="message" placeholder="Enter your message" value="{{ body }}" rows="11" required></textarea>
 					</div>

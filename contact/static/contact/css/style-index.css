@@ -42,22 +42,34 @@ input {
 }
 
 
-  #contact_form_wrapper {
-    background-color: white;
-    margin: 25% 5% 5% 5%;
-  }
+#contact_form_wrapper {
+  background-color: white;
+  margin: 25% 5% 5% 5%;
+}
 
-  #contact_form_header {
-    margin-top: 0%;
-    margin-left: 5%;
-    padding-top: 5%;
-    text-decoration: underline;
-  }
+#contact_form_header {
+  margin-top: 0%;
+  margin-left: 5%;
+  padding-top: 5%;
+  text-decoration: underline;
+}
 
-  #contact_form_description {
-    margin-left: 5%;
-    padding-top: 3%;
-  }
+#contact_form_description {
+  margin-left: 5%;
+  padding-top: 3%;
+}
+
+small {
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+#name_error {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 /*Set display for tablets and desktops*/
 @media only screen and (min-width: 700px) {
