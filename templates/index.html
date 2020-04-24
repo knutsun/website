@@ -131,18 +131,27 @@
       <section id="section-c" class="grid">
       <div class="content-wrap">
         <h2 class="content-title">Subscribe to our Newsletter</h2>
-        <p style="margin-bottom:15px">Stay up to date on upcoming events, prayer requests, and more.</p>
+        <p style="margin-bottom:15px">Stay up to date on upcoming events, prayer requests, and more.
+        </p>
 
-          <form>
-            <input type="text" name="" placeholder="Enter email" style="padding: 10px">
-            <input type="submit" name="" value="submit" style="  background-color: #4CAF50; /* Green */
-              border: 1px solid black;
-              color: white;
-              padding: 13px 25px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;">
+          <form method="POST">
+            {% csrf_token %}
+            <div class = "form-group">
+
+            <div>
+              {{ form.as_p }}
+              <input type="submit" name="" value="Subscribe" style="
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                /*padding: 15px 42px;*/
+                padding: 15px 45px 15px 45px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;">
+            </div>
+
           </form>
 
       </div>
