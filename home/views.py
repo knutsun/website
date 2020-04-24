@@ -26,11 +26,17 @@ def index(request):
 
     if request.method == 'POST':
         sub = forms.Subscribe(request.POST)
-        subject = 'Welcome to the Gateway Newsletter'
-        message = 'We are happy you\'ve subscribed.'
         recipient = str(sub['Email'].value())
+        sub2 = Subscribers.objects.create(email=recipient, conf_num=random_digits())
 
-        Subscribers.objects.create(email=recipient, conf_num=random_digits())
+
+        subject = 'Welcome to the Gateway Newsletter'
+        message = 'Thank you for signing up for my email newsletter! \
+                Please complete the process by \
+                <a href="{}confirm/?email={}&conf_num={}"> clicking here to \
+                confirm your registration</a>.'.format(request.build_absolute_uri('subscribe/'),
+                                                    sub2.email,
+                                                    sub2.conf_num)
 
         send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
 
