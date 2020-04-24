@@ -3,6 +3,7 @@ from django.shortcuts import render
 from gway.settings import EMAIL_HOST_USER
 from . import forms
 from .models import Subscribers
+from django.contrib.auth.decorators import login_required
 
 import random
 
@@ -28,3 +29,11 @@ def subscribe(request):
 
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
+
+
+@login_required
+def subscribers(request):
+
+    recipient_list = Subscribers.objects.all()
+
+    return render(request, 'subscribe/subscribers.html', {'recipient_list': recipient_list})

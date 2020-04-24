@@ -14,22 +14,5 @@
     <h1 style="margin-top: 10%;">Email sent successfully to: {{ recipient }}</h1>
 
 
-
-                <table id="sermons" class="">
-                <tr>
-                </tr>
-                <tbody id="myTable">
-                    {% for recipient in recipient_list %}
-                    <tr class="tr">
-                        <td>
-                            {{ recipient.email }}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-
-
 {% endblock %}
 
