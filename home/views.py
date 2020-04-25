@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from events.models import Event
-from django.core.mail import send_mail
 from django.shortcuts import render
-
+from django.core.mail import send_mail
 from gway.settings import EMAIL_HOST_USER
 from subscribe import forms
 from subscribe.models import Subscribers
@@ -29,24 +27,26 @@ def index(request):
         recipient = str(sub['Email'].value())
         sub2 = Subscribers.objects.create(email=recipient, conf_num=random_digits())
 
-
         subject = 'Welcome to the Gateway Newsletter'
-        message = 'Thank you for signing up for my email newsletter! \
-                Please complete the process by \
-                <a href="{}confirm/?email={}&conf_num={}"> clicking here to \
-                confirm your registration</a>.'.format(request.build_absolute_uri('subscribe/'),
-                                                    sub2.email,
-                                                    sub2.conf_num)
+        message = 'Thank you for signing up for our email newsletter! \
+                Please complete the process by clicking on the following link\
+                to confirm your registration. \
+                "{}confirm/?email={}&conf_num={}"'.format(
+                request.build_absolute_uri('subscribe/'),
+                sub2.email, sub2.conf_num)
 
-        send_mail(subject, message, EMAIL_HOST_USER, [recipient], fail_silently=False)
+        send_mail(subject, message, EMAIL_HOST_USER,
+                  [recipient], fail_silently=False)
 
         recipient_list = Subscribers.objects.all()
 
-        return render(request, 'subscribe/success.html', {'recipient': recipient,
-                                                          'recipient_list': recipient_list})
+        return render(request, 'subscribe/success.html',
+                               {'recipient': recipient,
+                                'recipient_list': recipient_list})
 
     return render(request, 'index.html', context)
 
 
+# Helper method
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
