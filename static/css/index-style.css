@@ -230,6 +230,21 @@ p {
   font-family: 'PT Sans', sans-serif;
 }
 
+#newsletter-submit-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    /*padding: 15px 42px;*/
+    padding: 15px 45px 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  #newsletter-submit-btn:hover {
+    background-color: #77d47a;
+  }
+
 @media(min-width: 700px){
   .grid {
     display: grid;
@@ -295,4 +310,18 @@ p {
     font-family: 'PT Sans', sans-serif;
   }
 
+  #newsletter-submit-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    /*padding: 15px 42px;*/
+    padding: 15px 45px 15px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  #newsletter-submit-btn:hover {
+    background-color: #77d47a;
+  }
 }

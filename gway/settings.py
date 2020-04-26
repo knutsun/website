@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'events',
     'home',
     'api',
+    'subscribe',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -147,13 +148,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'US/Eastern'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -167,5 +164,13 @@ STATIC_URL = '/static/'
 #   os.path.join(BASE_DIR, 'static/'),
 # )
 
-LOGIN_REDIRECT_URL = 'home:index' #alternatively, can use '/'
+LOGIN_REDIRECT_URL = 'home:index'  # alternatively, can use '/'
 LOGOUT_REDIRECT_URL = 'home:index'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'gwaybaptist@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']

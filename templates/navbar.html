@@ -9,12 +9,20 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Ministries</a>
+        <div class="dropdown">
+          <div class=" dropdown-toggle min" data-toggle="dropdown">Ministries
+        </div>
+          <ul class="dropdown-menu">
+            <li><a href="#">Children's</a></li>
+            <hr>
+            <li><a href="#">Adult</a></li>
+          </ul>
+        </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'sermons:index' %}">Sermons</a>
         </li>
-        <li class="nav-item"> 
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'location' %}">Location</a>
         </li>
         <li class="nav-item">
