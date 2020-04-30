@@ -10,9 +10,15 @@
 
 {% block body %}
 <body>
+<div id="wrapper">
 
+<div id="inside-wrapper">
+    <h1>Visit Us</h1>
 
-    <h1>Visit Us!</h1>
+    <p id="description">We're located west of Valdosta near the Brooks county line.
+    Click the church icon on the map below to get directions. You can find our service times at the bottom of the page.
+    We look forward to seeing you soon!
+</p>
 
 
     <div id="map">
@@ -24,7 +30,7 @@
 
             // map options
             var options = {
-                zoom: 15,
+                zoom: 13,
                 center: {lat: 30.865410, lng: -83.383724}
             }
 
@@ -35,16 +41,21 @@
             var marker = new google.maps.Marker({
                 position: {lat: 30.865410, lng: -83.383724},
                 map: map,
-                icon: "{% static 'img/church.svg' %}"
+                icon: "{% static 'img/church75x75.png' %}"
             });
 
 
             var infoWindow = new google.maps.InfoWindow({
-                content: '<a href="https://www.google.com/maps/dir/?api=1&destination=Gateway+Baptist+Church,+17825+Valdosta+Hwy,+Valdosta,+GA+31602&travelmode=driving"><h2> Gateway Baptist Church </h2> <p>17825 Valdosta Hwy, Valdosta, GA 31602</p></a>'
+                content: '<a id="church-link" href="https://www.google.com/maps/dir/?api=1&destination=Gateway+Baptist+Church,+17825+Valdosta+Hwy,+Valdosta,+GA+31602&travelmode=driving"><h2> Gateway Baptist Church </h2> <p>17825 Valdosta Hwy, Valdosta, GA 31602</p></a>'
             });
 
             marker.addListener('click', function(){
                 infoWindow.open(map, marker);
+            });
+
+
+            $(document).ready(function() {
+                document.getElementById("church-link").click();
             });
 
         }
@@ -53,8 +64,8 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR9ExVyqXywPKHJqYtgFVEVJA7uQHSKY8&callback=initMap"
     async defer></script>
-
-
+</div>
+</div>
 </body>
 
 {% endblock %}
