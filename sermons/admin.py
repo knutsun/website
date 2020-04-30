@@ -1,5 +1,6 @@
-from .models import Sermons
 from django.contrib import admin
+
+from .models import Sermons
 
 admin.site.site_header = 'Gateway Dashboard'
 

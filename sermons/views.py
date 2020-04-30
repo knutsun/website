@@ -1,8 +1,9 @@
-from .models import Sermons
 from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import render
 from django.views.generic import DetailView
+
+from .models import Sermons
 
 
 def index(request):

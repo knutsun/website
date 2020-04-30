@@ -1,5 +1,6 @@
-from django.db import models
 import audioread
+
+from django.db import models
 
 
 class Sermons(models.Model):
@@ -12,6 +13,7 @@ class Sermons(models.Model):
         permissions = (
                 ('can_submit', "Can submit a new Sermon"),
             )
+        verbose_name = 'Sermon'
 
     def __str__(self):
         return self.title
