@@ -1,6 +1,5 @@
 from django.db import models
-from django import forms
-from django.forms import ModelForm
+
 
 class Event(models.Model):
     name = models.CharField(max_length=50)

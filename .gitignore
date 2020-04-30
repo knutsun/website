@@ -27,3 +27,7 @@ myvirtenv/
 .DS_STORE
 api/migrations/__init__.py api/migrations/__pycache__ contact/migrations/0001_initial.py contact/migrations/0002_contact_email.py contact/migrations/0003_auto_20181117_2007.py contact/migrations/__init__.py contact/migrations/__pycache__ events/migrations/0001_initial.py events/migrations/__init__.py events/migrations/__pycache__ home/migrations/__init__.py home/migrations/__pycache__ sermons/migrations/0001_initial.py sermons/migrations/__init__.py sermons/migrations/__pycache__ subscribe/migrations/0001_initial.py subscribe/migrations/0002_auto_20200423_1804.py subscribe/migrations/0003_auto_20200423_1830.py subscribe/migrations/0004_auto_20200424_1617.py subscribe/migrations/__init__.py subscribe/migrations/__pycache__
 source/
+subscribe/migrations/0001_initial.py
+subscribe/migrations/0002_auto_20200423_1804.py
+subscribe/migrations/0003_auto_20200423_1830.py
+subscribe/migrations/0004_auto_20200424_1617.py

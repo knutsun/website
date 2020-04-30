@@ -1,11 +1,16 @@
-from events.models import Event
-from django.shortcuts import render
+import random
+
 from django.core.mail import send_mail
+from django.shortcuts import render
+
+from events.models import Event
 from gway.settings import EMAIL_HOST_USER
 from subscribe import forms
 from subscribe.models import Subscribers
 
-import random
+
+def random_digits():
+    return "%0.12d" % random.randint(0, 999999999999)
 
 
 def index(request):
@@ -45,8 +50,3 @@ def index(request):
                                 'recipient_list': recipient_list})
 
     return render(request, 'index.html', context)
-
-
-# Helper method
-def random_digits():
-    return "%0.12d" % random.randint(0, 999999999999)
