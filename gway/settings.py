@@ -11,7 +11,7 @@ import os
 if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
-    ALLOWED_HOSTS = [os.environ['SITENAME'], '178.128.186.149']
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     MEDIA_ROOT = '/home/chaz/sites/staging-gateway.com/media/'
