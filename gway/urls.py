@@ -10,6 +10,7 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
 
     path('', include('home.urls')),
+    path('about/', include('about.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),

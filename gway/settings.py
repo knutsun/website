@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'contact',
     'events',
     'home',
+    'about',
     'api',
     'subscribe',
 

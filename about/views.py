@@ -1,0 +1,42 @@
+from django.shortcuts import render
+
+# Create your views here.
+
+
+def index(request):
+    # sermon_objs = Sermons.objects
+    # all_sermons = sermon_objs.all()
+    # sermon_count = all_sermons.count()
+    # sermons_ordered_by_date = sermon_objs.order_by('date')
+
+    # search_text = None
+    # search_result_count = None
+
+    # if 'search' in request.GET:
+    #     search_text = request.GET['search']
+    #     all_sermons = all_sermons.filter(
+    #         Q(description__icontains=search_text) |
+    #         Q(title__icontains=search_text)
+    #     )
+    #     search_result_count = all_sermons.count()
+
+    #     if search_result_count:
+    #         if search_result_count > 1:
+    #             search_result_count = '{} results.'.format(search_result_count)
+    #         else:
+    #             search_result_count = '{} result.'.format(search_result_count)
+    #     else:
+    #         messages.success(request, "Your search yielded no results.",
+    #                                   extra_tags="message_failure")
+    #         all_sermons = Sermons.objects.all()
+
+    # context = {
+    #     'all_sermons': all_sermons,
+    #     'first_sermon': sermons_ordered_by_date[0],
+    #     'last_sermon': sermons_ordered_by_date[sermon_count-1],
+    #     'search_text': search_text,
+    #     'search_result_count': search_result_count,
+    #     'sermon_count': sermon_count,
+    # }
+
+    return render(request, 'about/index.html')
