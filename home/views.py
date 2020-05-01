@@ -2,6 +2,7 @@ import random
 
 from django.core.mail import send_mail
 from django.shortcuts import render
+from django.db import IntegrityError
 
 from events.models import Event
 from gway.settings import EMAIL_HOST_USER
@@ -27,26 +28,30 @@ def index(request):
         'form': sub,
     }
 
-    if request.method == 'POST':
-        sub = forms.Subscribe(request.POST)
-        recipient = str(sub['Email'].value())
-        sub2 = Subscribers.objects.create(email=recipient, conf_num=random_digits())
+    try:
+        if request.method == 'POST':
+            sub = forms.Subscribe(request.POST)
+            recipient = str(sub['Email'].value())
+            sub2 = Subscribers.objects.create(email=recipient, conf_num=random_digits())
 
-        subject = 'Welcome to the Gateway Newsletter'
-        message = 'Thank you for signing up for our email newsletter! \
-                Please complete the process by clicking on the following link\
-                to confirm your registration. \
-                "{}confirm/?email={}&conf_num={}"'.format(
-                request.build_absolute_uri('subscribe/'),
-                sub2.email, sub2.conf_num)
+            subject = 'Welcome to the Gateway Newsletter'
+            message = 'Thank you for signing up for our email newsletter! \
+                    Please complete the process by clicking on the following link\
+                    to confirm your registration. \
+                    "{}confirm/?email={}&conf_num={}"'.format(
+                    request.build_absolute_uri('subscribe/'),
+                    sub2.email, sub2.conf_num)
 
-        send_mail(subject, message, EMAIL_HOST_USER,
-                  [recipient], fail_silently=False)
+            send_mail(subject, message, EMAIL_HOST_USER,
+                      [recipient], fail_silently=False)
 
-        recipient_list = Subscribers.objects.all()
+            recipient_list = Subscribers.objects.all()
+            redirect_anchor = 'section-f'
 
-        return render(request, 'subscribe/success.html',
-                               {'recipient': recipient,
-                                'recipient_list': recipient_list})
+            return render(request, 'subscribe/success.html',
+                                   {'recipient': recipient,
+                                    'recipient_list': recipient_list})
+    except IntegrityError as e:
+        return render(request, 'index.html', {'form': sub, "message": e.args, "redirect_anchor": redirect_anchor})
 
     return render(request, 'index.html', context)

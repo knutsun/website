@@ -127,8 +127,15 @@
     </section>
 
 
+      {% if redirect_anchor %}
+      <script type='text/javascript'>
+      $(document).ready(function(){
+          window.location = '#{{ redirect_anchor }}'
+      });
+      </script>
+      {% endif %}
 
-      <section id="section-c" class="grid">
+      <section id="section-f" class="grid">
       <div class="content-wrap">
         <h2 class="content-title">Subscribe to our Newsletter</h2>
         <p style="margin-bottom:15px">Stay up to date on upcoming events, prayer requests, and more.
