@@ -1,0 +1,2 @@
+export POSTGRES_PASSWORD='123god1;'
+export EMAIL_HOST_PASSWORD='123god1;'

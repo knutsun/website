@@ -31,3 +31,4 @@ subscribe/migrations/0001_initial.py
 subscribe/migrations/0002_auto_20200423_1804.py
 subscribe/migrations/0003_auto_20200423_1830.py
 subscribe/migrations/0004_auto_20200424_1617.py
+envvars.txt
