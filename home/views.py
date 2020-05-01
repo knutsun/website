@@ -27,7 +27,7 @@ def index(request):
         'three_events': three_events,
         'form': sub,
     }
-
+    redirect_anchor = 'section-f'
     try:
         if request.method == 'POST':
             sub = forms.Subscribe(request.POST)
@@ -46,7 +46,6 @@ def index(request):
                       [recipient], fail_silently=False)
 
             recipient_list = Subscribers.objects.all()
-            redirect_anchor = 'section-f'
 
             return render(request, 'subscribe/success.html',
                                    {'recipient': recipient,
