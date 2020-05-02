@@ -2,18 +2,37 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  background-color: #0D4970;
-  color: white;
+  /*background-color: #0D4970;*/
+  color: black;
   margin-top: 14%;
 }
 .header {
+  margin-top: 15%;
   text-align: center;
 }
 .date {
   text-align: center;
 }
 .description {
-  margin: 10% 10% 0 10%;
+  margin: 10% 10% 25% 10%;
+  padding-bottom: 75%;
+}
+
+/*Set display for tablets and desktops*/
+@media only screen and (min-width: 450px) and (max-width: 700px) {
+  .wrapper {
+    margin-top: 2%;
+  }
+  .header {
+    margin-top: 20%;
+  }
+
+  .description {
+    margin: 7% 10% 25% 10%;
+    padding-bottom: 75%;
+  }
+
+
 }
 
 /*Set display for tablets and desktops*/
@@ -22,18 +41,20 @@
     margin-top: 2%;
   }
   .header {
-    margin-top: 3%;
+    margin-top: 10%;
   }
 
   .description {
-    margin: 7% 10% 0 10%;
+    margin: 7% 10% 25% 10%;
+    padding-bottom: 35%;
   }
 
 
 }
 @media only screen and (min-width: 1000px) {
   .description {
-    margin: 8% 15% 0 15%;
+    margin: 8% 15% 25% 15%;
+    padding-bottom: 35%;
   }
 
 }

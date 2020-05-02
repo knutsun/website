@@ -67,6 +67,43 @@
 	        </div>
 	    </section>
 
+      {% if redirect_anchor %}
+      <script type='text/javascript'>
+      $(document).ready(function(){
+          window.location = '#{{ redirect_anchor }}'
+      });
+      </script>
+      {% endif %}
+
+      <section id="section-f" class="grid">
+        <div class="content-wrap">
+          <h2 class="content-title">Subscribe to our Newsletter</h2>
+          <p style="margin-bottom:15px">Stay up to date on upcoming events, prayer requests, and more.
+          </p>
+
+            <form method="POST">
+              {% csrf_token %}
+              <div class = "form-group">
+
+              <div>
+                {{ form.as_p }}
+                <input type="submit" id="newsletter-submit-btn" name="" value="Subscribe" style="
+                  background-color: #4CAF50; /* Green */
+                  border: none;
+                  color: white;
+                  /*padding: 15px 42px;*/
+                  padding: 15px 45px 15px 45px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;">
+              </div>
+
+            </form>
+
+        </div>
+      </section>
+
 	<!-- Section B --->
 	<h1 class="content-title">Upcoming events</h1>
 	<section id="section-b" class="grid">
@@ -75,13 +112,7 @@
 			<li>
                 <div id="test_grid">
                     <div id="header">
-                        <a href="{% url 'events:detail'
-                                            event.date.year
-                                            event.date.month
-                                            event.date.day
-                                            event.pk %}">
-                                            {{ event.name }}
-                        </a>
+                      <a href="{% url 'events:detail' event.date.year event.date.month event.date.day event.pk %}">{{ event.name }}</a>
                     </div>
                     <div id="date-card">
                     <div class="month">
@@ -126,43 +157,6 @@
       </div>
     </section>
 
-
-      {% if redirect_anchor %}
-      <script type='text/javascript'>
-      $(document).ready(function(){
-          window.location = '#{{ redirect_anchor }}'
-      });
-      </script>
-      {% endif %}
-
-      <section id="section-f" class="grid">
-      <div class="content-wrap">
-        <h2 class="content-title">Subscribe to our Newsletter</h2>
-        <p style="margin-bottom:15px">Stay up to date on upcoming events, prayer requests, and more.
-        </p>
-
-          <form method="POST">
-            {% csrf_token %}
-            <div class = "form-group">
-
-            <div>
-              {{ form.as_p }}
-              <input type="submit" id="newsletter-submit-btn" name="" value="Subscribe" style="
-                background-color: #4CAF50; /* Green */
-                border: none;
-                color: white;
-                /*padding: 15px 42px;*/
-                padding: 15px 45px 15px 45px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;">
-            </div>
-
-          </form>
-
-      </div>
-    </section>
 
   </main>
 
