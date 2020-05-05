@@ -1,6 +1,5 @@
 from django.forms import ModelForm
 
-from enums.error_messages import ErrorMessages
 from .models import Contact
 
 
@@ -14,5 +13,4 @@ class ContactForm(ModelForm):
             'name': {'required': 'Name is invalid. Please enter a valid name.'},
             'email': {'required': 'Email is invalid. Please enter a valid email.'},
             'body': {'required': 'Message is invalid. Please enter a valid message.'}
-
         }

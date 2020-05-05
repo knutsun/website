@@ -1,11 +1,6 @@
 from .forms import ContactForm
 import unittest
 
-# from enums.error_messages import ErrorMessages
-
-EMPTY_SUBJECT = 'Subject is invalid. Please enter a valid subject.'
-EMPTY_NAME = 'Name is invalid. Please enter a valid name.'
-
 
 class TestContactForm(unittest.TestCase):
 
