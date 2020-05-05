@@ -10,5 +10,9 @@ class ContactForm(ModelForm):
         fields = ['subject', 'name', 'email', 'body']
 
         error_messages = {
-            'subject': {'required': ErrorMessages.EMPTY_SUBJECT}
+            'subject': {'required': 'Subject is invalid. Please enter a valid subject.'},
+            'name': {'required': 'Name is invalid. Please enter a valid name.'},
+            'email': {'required': 'Email is invalid. Please enter a valid email.'},
+            'body': {'required': 'Message is invalid. Please enter a valid message.'}
+
         }
