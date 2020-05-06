@@ -34,7 +34,7 @@
 			<div id="error_message">
 				<form id="myform" onsubmit="return validation();" class="" action="" method="post" enctype="multipart/form-data">
 					{% csrf_token %}
-
+					{{ form.errors }}
 					<div class="subject-wrapper input_field">
 						<label id="subject-label" for="">Subject</label>
 							<input type="text" placeholder="Enter subject" id="subject" name="subject" value="{{ subject }}">
