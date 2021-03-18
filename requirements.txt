@@ -1,5 +1,5 @@
 audioread==2.1.8
-django==3.0.4
+django==3.1.6
 django-filter==2.2.0
 djangorestframework==3.11.0
 markdown==3.2.1
